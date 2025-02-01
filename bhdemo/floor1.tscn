@@ -1,0 +1,131 @@
+[gd_scene load_steps=20 format=3 uid="uid://borh4qmw0lhdv"]
+
+[ext_resource type="Texture2D" path="res://forwardidle.png" id="1_br753"]
+[ext_resource type="Script" path="res://barbara.gd" id="2_rj6mo"]
+[ext_resource type="Texture2D" uid="uid://cjhy0t53hd3j0" path="res://barbarasprites/forward/barbfw-0.png" id="3_1nyyr"]
+[ext_resource type="Texture2D" uid="uid://s2qjx5b8lh3d" path="res://barbarasprites/forward/barbfw-1.png" id="4_6ilhd"]
+[ext_resource type="Texture2D" uid="uid://t1oc4q80h6l5" path="res://barbarasprites/forward/barbfw-2.png" id="5_s6u4s"]
+[ext_resource type="Texture2D" uid="uid://qnrcffe6vhpa" path="res://barbarasprites/forward/barbfw-3.png" id="6_jgcyv"]
+[ext_resource type="Texture2D" uid="uid://77bbw8g43vmh" path="res://barbarasprites/idle/barbfw idle.png" id="7_twiiq"]
+[ext_resource type="Texture2D" uid="uid://d3bbe3ec03p5e" path="res://barbarasprites/left/barblw-0.png" id="8_f0vpp"]
+[ext_resource type="Texture2D" uid="uid://bb1i10tqw1l51" path="res://barbarasprites/left/barblw-1.png" id="9_r5hny"]
+[ext_resource type="Texture2D" uid="uid://but573spnopt4" path="res://barbarasprites/idle/barblw idle.png" id="10_8igm4"]
+[ext_resource type="Texture2D" uid="uid://dpxdvatf8abqw" path="res://barbarasprites/right/barbrw-0.png" id="11_tl8d5"]
+[ext_resource type="Texture2D" uid="uid://cp7nfps0e0l3s" path="res://barbarasprites/right/barbrw-1.png" id="12_2n5cx"]
+[ext_resource type="Texture2D" uid="uid://mh7nx6sh4c3j" path="res://barbarasprites/idle/barbrw idle.png" id="13_n3gar"]
+[ext_resource type="Texture2D" uid="uid://bkpxg6j17pigy" path="res://barbarasprites/backward/barbbw-0.png" id="14_5ekps"]
+[ext_resource type="Texture2D" uid="uid://bjoq80tid4nig" path="res://barbarasprites/backward/barbbw-1.png" id="15_rve5w"]
+[ext_resource type="Texture2D" uid="uid://bdmj7ip4wjsbs" path="res://barbarasprites/backward/barbbw-2.png" id="16_alrir"]
+[ext_resource type="Texture2D" uid="uid://cxj2mnyextmf2" path="res://barbarasprites/backward/barbbw-3.png" id="17_fu6gb"]
+[ext_resource type="Texture2D" uid="uid://dofku441hcir8" path="res://barbarasprites/idle/barbbw idle.png" id="18_h3xkp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6a5m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1nyyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ilhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s6u4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jgcyv")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_twiiq")
+}],
+"loop": true,
+"name": &"downidle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_f0vpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_r5hny")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8igm4")
+}],
+"loop": true,
+"name": &"leftidle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_tl8d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2n5cx")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_n3gar")
+}],
+"loop": true,
+"name": &"rightidle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_5ekps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rve5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_alrir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fu6gb")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_h3xkp")
+}],
+"loop": true,
+"name": &"upidle",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(576, 324)
+
+[node name="floor" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+color = Color(0, 0, 0, 1)
+
+[node name="barbara" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_br753")
+script = ExtResource("2_rj6mo")
+
+[node name="walking" type="AnimatedSprite2D" parent="barbara"]
+sprite_frames = SubResource("SpriteFrames_p6a5m")
+animation = &"down"
