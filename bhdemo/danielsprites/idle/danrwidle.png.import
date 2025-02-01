@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfnxe08keg2sy"
-path="res://.godot/imported/forwardidle.png-a17cd817d2005bd4460d6e573c6c05dd.ctex"
+uid="uid://cn1nhew243a0i"
+path="res://.godot/imported/danrwidle.png-0ee914e422211b9f08df0ff0ea70f871.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://barbarasprites/forwardidle.png"
-dest_files=["res://.godot/imported/forwardidle.png-a17cd817d2005bd4460d6e573c6c05dd.ctex"]
+source_file="res://danielsprites/idle/danrwidle.png"
+dest_files=["res://.godot/imported/danrwidle.png-0ee914e422211b9f08df0ff0ea70f871.ctex"]
 
 [params]
 
