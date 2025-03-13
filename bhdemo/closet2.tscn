@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://0qsyvtismthn"]
+
+[ext_resource type="Texture2D" uid="uid://dvsdv7sveft35" path="res://bgsprites/convent_2ndfloor/3_storage_closet.png" id="1_4plia"]
+
+[node name="closet" type="StaticBody2D"]
+
+[node name="3StorageCloset" type="Sprite2D" parent="."]
+texture = ExtResource("1_4plia")

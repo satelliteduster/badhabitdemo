@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm7028kbgrqb1"
-path="res://.godot/imported/1 - basement.png-bae7c8633bdcfc20adbf3f4d5ce676c3.ctex"
+uid="uid://buoiomm1hjbhp"
+path="res://.godot/imported/5_bathroom.png-6d79a01b612ad2aebd65eba76cfb7e42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bgsprites/convent_1stfloor/1 - basement.png"
-dest_files=["res://.godot/imported/1 - basement.png-bae7c8633bdcfc20adbf3f4d5ce676c3.ctex"]
+source_file="res://bgsprites/convent_2ndfloor/5_bathroom.png"
+dest_files=["res://.godot/imported/5_bathroom.png-6d79a01b612ad2aebd65eba76cfb7e42.ctex"]
 
 [params]
 

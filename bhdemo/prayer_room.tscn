@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx3812hg3pnax"]
+
+[ext_resource type="Texture2D" uid="uid://jmvwho35e3j5" path="res://bgsprites/convent_2ndfloor/4_prayer_room.png" id="1_m6a5l"]
+
+[node name="prayer room" type="StaticBody2D"]
+
+[node name="bathroom" type="StaticBody2D" parent="."]
+
+[node name="4PrayerRoom" type="Sprite2D" parent="."]
+texture = ExtResource("1_m6a5l")

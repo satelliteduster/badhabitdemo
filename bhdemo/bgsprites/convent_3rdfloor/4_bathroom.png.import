@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5kxkl4521oiq"
-path="res://.godot/imported/1_hallway.png-7d42336cab973b4caa4005f9ed1637b0.ctex"
+uid="uid://xymllh6rw6us"
+path="res://.godot/imported/4_bathroom.png-7bc5e1b5166f1b729a7399d0a6d9f892.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bgsprites/basement/1_hallway.png"
-dest_files=["res://.godot/imported/1_hallway.png-7d42336cab973b4caa4005f9ed1637b0.ctex"]
+source_file="res://bgsprites/convent_3rdfloor/4_bathroom.png"
+dest_files=["res://.godot/imported/4_bathroom.png-7bc5e1b5166f1b729a7399d0a6d9f892.ctex"]
 
 [params]
 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnmhsvjt5y7gq"]
+
+[ext_resource type="PackedScene" uid="uid://0qsyvtismthn" path="res://closet2.tscn" id="1_v7cqa"]
+[ext_resource type="Texture2D" uid="uid://6qp4uxcu5rhb" path="res://bgsprites/convent_2ndfloor/2_storage.png" id="2_lpf1o"]
+
+[node name="storage room" type="StaticBody2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("2_lpf1o")
+
+[node name="closet" parent="." instance=ExtResource("1_v7cqa")]
+position = Vector2(-306, 0)

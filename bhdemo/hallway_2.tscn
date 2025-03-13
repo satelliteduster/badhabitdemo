@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdeclec7bklmh"]
+
+[ext_resource type="Texture2D" uid="uid://dwa3exoi78dj3" path="res://bgsprites/convent_2ndfloor/1_hallway2.png" id="1_7jnf1"]
+[ext_resource type="PackedScene" uid="uid://col1h5jc61yer" path="res://upstairs.tscn" id="2_q46f3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q46f3"]
+size = Vector2(40, 58)
+
+[node name="hallway2" type="StaticBody2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_7jnf1")
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.76, 0.76)
+polygon = PackedVector2Array(419, -369, 536, -495, 534, 468, -530, 474, -530, -500, 535, -497, 417, -371, 417, -168, 46, -168, 46.0526, -343.421, -51.3158, -343.421, -51, -168, -417, -168, -421.053, -125, -476.316, -125, -476.316, -46.0526, -417.105, -46.0526, -415.789, 85.5263, -477.27, 84.9164, -477.632, 164.474, -420, 164, -419.737, 297.368, -475, 297.368, -476.316, 378.947, -291, 379, -291, -42, -46.0526, -42.1053, -44.7368, -17.1053, 46.0526, -17.1053, 47.3684, -42.1053, 295, -43, 294, 382, 418, 382, 418, 298, 480, 298, 480, 205, 417, 205, 415.789, 42.1053, 472.368, 42.1053, 472.368, -44.7368, 417.105, -43.4211)
+
+[node name="exit" parent="." instance=ExtResource("2_q46f3")]
+position = Vector2(-1, -195)
+scale = Vector2(0.8, 1)
+
+[node name="to_bathroom" type="Area2D" parent="."]
+position = Vector2(-342, -68)
+
+[node name="coll" type="CollisionShape2D" parent="to_bathroom"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_q46f3")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="to_storage" type="Area2D" parent="."]
+position = Vector2(-344, 255)
+
+[node name="coll" type="CollisionShape2D" parent="to_storage"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_q46f3")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="to_prayerroom" type="Area2D" parent="."]
+position = Vector2(-342, 92)
+
+[node name="coll" type="CollisionShape2D" parent="to_prayerroom"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_q46f3")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="to_vestry" type="Area2D" parent="."]
+position = Vector2(336, -4)
+
+[node name="coll" type="CollisionShape2D" parent="to_vestry"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_q46f3")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="to_sacristy" type="Area2D" parent="."]
+position = Vector2(338, 188)
+
+[node name="coll" type="CollisionShape2D" parent="to_sacristy"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_q46f3")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true

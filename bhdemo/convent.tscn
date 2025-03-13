@@ -10,8 +10,12 @@
 [node name="firstfloor" parent="." instance=ExtResource("1_swi4w")]
 
 [node name="secondfloor" parent="." instance=ExtResource("2_a68jw")]
+position = Vector2(0, -2000)
+scale = Vector2(1.3, 1.3)
 
 [node name="thirdfloor" parent="." instance=ExtResource("3_vrevg")]
+position = Vector2(0, -4000)
+scale = Vector2(1.3, 1.3)
 
 [node name="basement" parent="." instance=ExtResource("4_5ok6k")]
-position = Vector2(0, -2300)
+position = Vector2(0, 1300)

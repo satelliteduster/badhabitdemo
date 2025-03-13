@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://48wwx1uiaef4"]
+
+[ext_resource type="Texture2D" uid="uid://cfpgtnx3m6nc6" path="res://bgsprites/convent_2ndfloor/6_vestry[up].png" id="1_dei2v"]
+
+[node name="vestry" type="StaticBody2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_dei2v")

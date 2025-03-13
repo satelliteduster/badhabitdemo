@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0slgls1l4s1x"]
+
+[ext_resource type="Texture2D" uid="uid://cxs31x1awhove" path="res://bgsprites/convent_3rdfloor/5_storage.png" id="1_8o3ip"]
+
+[node name="storage" type="StaticBody2D"]
+
+[node name="5Storage" type="Sprite2D" parent="."]
+texture = ExtResource("1_8o3ip")

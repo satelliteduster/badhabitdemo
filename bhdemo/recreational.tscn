@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbuel2t6dtu3h"]
+
+[ext_resource type="Texture2D" uid="uid://mloxrmhvwkje" path="res://bgsprites/convent_3rdfloor/2_recreational.png" id="1_cut8j"]
+
+[node name="recreational" type="StaticBody2D"]
+
+[node name="2Recreational" type="Sprite2D" parent="."]
+texture = ExtResource("1_cut8j")

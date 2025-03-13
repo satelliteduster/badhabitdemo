@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg7e8peenb811"]
+
+[ext_resource type="Texture2D" uid="uid://buk7jpj0wc0se" path="res://bgsprites/convent_3rdfloor/3_dormitories.png" id="1_xiylk"]
+
+[node name="dormitory" type="StaticBody2D"]
+
+[node name="3Dormitories" type="Sprite2D" parent="."]
+texture = ExtResource("1_xiylk")

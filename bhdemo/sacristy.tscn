@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://w1bkvwqc53q0"]
+
+[ext_resource type="Texture2D" uid="uid://dv3hqhomp26us" path="res://bgsprites/convent_2ndfloor/7_sacristy[down].png" id="1_htmfo"]
+
+[node name="sacristy" type="StaticBody2D"]
+
+[node name="7Sacristy[down]" type="Sprite2D" parent="."]
+texture = ExtResource("1_htmfo")
