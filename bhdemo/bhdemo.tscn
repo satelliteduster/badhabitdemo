@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpjjpfj45bd28"]
+
+[ext_resource type="PackedScene" uid="uid://b6tktttggsejv" path="res://barbara.tscn" id="1_qasne"]
+[ext_resource type="PackedScene" uid="uid://dlaubcxhyuuhy" path="res://properchurch.tscn" id="2_8tvq4"]
+[ext_resource type="PackedScene" uid="uid://cnmeqqgl3a2oo" path="res://convent.tscn" id="3_g4gj3"]
+
+[node name="bhdemo" type="Node"]
+
+[node name="barbara" parent="." instance=ExtResource("1_qasne")]
+position = Vector2(-1193, -78)
+
+[node name="currentscene" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="properchurch" parent="currentscene" instance=ExtResource("2_8tvq4")]
+
+[node name="convent" parent="currentscene" instance=ExtResource("3_g4gj3")]
+position = Vector2(37, -28)

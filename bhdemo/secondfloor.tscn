@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://podjx8cjogtk"]
+
+[node name="secondfloor" type="Node2D"]
+
+[node name="hallway2" type="StaticBody2D" parent="."]
+
+[node name="prayer room" type="StaticBody2D" parent="."]
+
+[node name="bathroom" type="StaticBody2D" parent="prayer room"]
+
+[node name="sacristy" type="StaticBody2D" parent="."]
+
+[node name="vestry" type="StaticBody2D" parent="sacristy"]
+
+[node name="storage room" type="StaticBody2D" parent="."]
+
+[node name="closet" type="StaticBody2D" parent="storage room"]

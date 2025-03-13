@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://n0ugbclfjndn"]
+
+[ext_resource type="Texture2D" uid="uid://b7sbdyhlyvuv3" path="res://item_kitchentable.png" id="1_1g6it"]
+
+[node name="kitchen table" type="Sprite2D"]
+texture = ExtResource("1_1g6it")
+
+[node name="kt_area" type="StaticBody2D" parent="."]
+
+[node name="coll" type="CollisionPolygon2D" parent="kt_area"]
+polygon = PackedVector2Array(-42, 140, -1, 116, -1, 79, 16, 81, 63, 52, 64, 27, 95, 8, 107, -22, 106, -50, 85, -69, 59, -83, 20, -88, -9, -82, -36, -68, -44, -61, -61, -72, -60, -134, -106, -107, -107, -4, -66, 14, -87, 14, -87, 114)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvywle8vt8ric"]
+
+[ext_resource type="Texture2D" uid="uid://bb346e72j43sl" path="res://3_pantry.png" id="1_p3pww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3pww"]
+size = Vector2(36.75, 77)
+
+[node name="pantry" type="StaticBody2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_p3pww")
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(82, 0, 126, -44, -123, -45, -123, 258, 127, 258, 127, -42, 84, 2, 84, 164, 43, 164, 43, 224, -35, 224, -35, 165, -82, 165, -82, 1)
+
+[node name="to_kitchen" type="Area2D" parent="."]
+position = Vector2(3, 205)
+rotation = 1.5708
+
+[node name="coll" type="CollisionShape2D" parent="to_kitchen"]
+shape = SubResource("RectangleShape2D_p3pww")
+debug_color = Color(0.432011, 0.601005, 0, 0.42)

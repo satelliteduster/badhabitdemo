@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dlaubcxhyuuhy"]
+
+[node name="properchurch" type="Node2D"]
+
+[node name="outside" type="StaticBody2D" parent="."]
+
+[node name="narthex" type="StaticBody2D" parent="."]
+
+[node name="sanctuary" type="StaticBody2D" parent="."]
+
+[node name="atrium" type="StaticBody2D" parent="."]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://be77w3lsv0158"]
+
+[node name="thirdfloor" type="Node2D"]
+
+[node name="hallway3" type="StaticBody2D" parent="."]
+
+[node name="showers" type="StaticBody2D" parent="."]
+
+[node name="laundry" type="StaticBody2D" parent="showers"]
+
+[node name="dormitory" type="StaticBody2D" parent="."]
+
+[node name="showers" type="StaticBody2D" parent="dormitory"]
+
+[node name="recreational" type="StaticBody2D" parent="dormitory"]

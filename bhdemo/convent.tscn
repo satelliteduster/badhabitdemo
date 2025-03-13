@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnmeqqgl3a2oo"]
+
+[ext_resource type="PackedScene" uid="uid://d2hkx545w4dij" path="res://firstfloor.tscn" id="1_swi4w"]
+[ext_resource type="PackedScene" uid="uid://podjx8cjogtk" path="res://secondfloor.tscn" id="2_a68jw"]
+[ext_resource type="PackedScene" uid="uid://be77w3lsv0158" path="res://thirdfloor.tscn" id="3_vrevg"]
+[ext_resource type="PackedScene" uid="uid://bd2rthrbcuq0t" path="res://basement.tscn" id="4_5ok6k"]
+
+[node name="convent" type="Node2D"]
+
+[node name="firstfloor" parent="." instance=ExtResource("1_swi4w")]
+
+[node name="secondfloor" parent="." instance=ExtResource("2_a68jw")]
+
+[node name="thirdfloor" parent="." instance=ExtResource("3_vrevg")]
+
+[node name="basement" parent="." instance=ExtResource("4_5ok6k")]

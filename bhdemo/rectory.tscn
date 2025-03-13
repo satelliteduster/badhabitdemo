@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpco5bau7emo"]
+
+[ext_resource type="Texture2D" uid="uid://bqgv0dwt7fu7u" path="res://5_rectory.png" id="1_yt0ks"]
+[ext_resource type="PackedScene" uid="uid://qoy3u8h0o7yq" path="res://rectory_desk.tscn" id="2_8mtl5"]
+[ext_resource type="PackedScene" uid="uid://7rhj0athn02i" path="res://closet.tscn" id="3_qdbxf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65li6"]
+size = Vector2(53.5, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37tha"]
+size = Vector2(120.375, 77)
+
+[node name="rectory" type="StaticBody2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_yt0ks")
+
+[node name="rectory desk" parent="." instance=ExtResource("2_8mtl5")]
+position = Vector2(97, 73)
+
+[node name="closet" parent="." instance=ExtResource("3_qdbxf")]
+position = Vector2(135, -900)
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(220, -282, 319, -368, 320, 375, -297, 376, -299, -376, 316, -375, 214, -286, 213, -124, 181, -123, 181, -289, 91, -289, 91, -126, -201, -124, -201, 122, -280, 122, -280, 205, -201, 205, -201, 291, 217, 291)
+
+[node name="to_hallway" type="Area2D" parent="."]
+position = Vector2(-462, 123)
+
+[node name="coll" type="CollisionShape2D" parent="to_hallway"]
+position = Vector2(213, 40)
+shape = SubResource("RectangleShape2D_65li6")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+
+[node name="to_closet" type="Area2D" parent="."]
+position = Vector2(-127, -190.188)
+rotation = 1.5708
+
+[node name="coll" type="CollisionShape2D" parent="to_closet"]
+position = Vector2(-33.8125, -263)
+shape = SubResource("RectangleShape2D_37tha")
+debug_color = Color(0.432011, 0.601005, 0, 0.42)

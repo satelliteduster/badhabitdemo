@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bd2rthrbcuq0t"]
+
+[node name="basement" type="Node2D"]
+
+[node name="fakebasement" type="StaticBody2D" parent="."]
+
+[node name="realbasement" type="StaticBody2D" parent="."]
+
+[node name="exit" type="StaticBody2D" parent="."]

@@ -11,11 +11,12 @@ config_version=5
 [application]
 
 config/name="bhdemo"
-run/main_scene="res://floor1.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="uid://cpjjpfj45bd28"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

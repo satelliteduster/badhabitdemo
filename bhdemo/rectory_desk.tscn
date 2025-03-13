@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://qoy3u8h0o7yq"]
+
+[ext_resource type="Texture2D" uid="uid://fnl8bkuewcbv" path="res://item_rectorydesk.png" id="1_xm7lt"]
+
+[node name="rectory desk" type="Sprite2D"]
+texture = ExtResource("1_xm7lt")
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="coll" type="CollisionPolygon2D" parent="area"]
+polygon = PackedVector2Array(-82, 140, 41, 140, 41, 59, 73, 58, 75, -79, -82, -80)

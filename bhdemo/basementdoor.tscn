@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4e6wqipbhbpg"]
+
+[ext_resource type="Texture2D" uid="uid://c8ehu8jrqh8tr" path="res://item_basementdoor.png" id="1_yeiqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yeiqu"]
+size = Vector2(77, 157)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="basementdoor" type="Sprite2D" parent="."]
+texture = ExtResource("1_yeiqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_yeiqu")

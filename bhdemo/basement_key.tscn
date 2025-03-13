@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6eiouwhimtlj"]
+
+[ext_resource type="Texture2D" uid="uid://dopd756f1hhew" path="res://item_basementkey.png" id="1_oddt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oddt5"]
+size = Vector2(83, 66.5)
+
+[node name="basement key" type="Sprite2D"]
+texture = ExtResource("1_oddt5")
+
+[node name="key_within_reach" type="Area2D" parent="."]
+
+[node name="coll" type="CollisionShape2D" parent="key_within_reach"]
+position = Vector2(1, 108)
+shape = SubResource("RectangleShape2D_oddt5")
+debug_color = Color(1, 0.000887435, 0.0813889, 0.42)

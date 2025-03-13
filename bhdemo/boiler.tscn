@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgwj14tug3v6y"]
+
+[ext_resource type="Texture2D" uid="uid://cyqvwybvc0c86" path="res://4_boiler room.png" id="1_um8p4"]
+[ext_resource type="PackedScene" uid="uid://c4e6wqipbhbpg" path="res://basementdoor.tscn" id="2_0xx5p"]
+
+[node name="boiler" type="StaticBody2D"]
+
+[node name="4BoilerRoom" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_um8p4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-88, 114)
+polygon = PackedVector2Array(180, -162, 182, -77, 180, 92, -67, 92, -188, 204, 325, 205, 330, -384, -188, -384, -188, 199, -67, 88, -67, 9, -108, 7, -110, -73, -68, -73, -69.5681, -161, 12, -161, 11, -320, 98, -323, 97, -161)
+
+[node name="basementdoor" parent="." instance=ExtResource("2_0xx5p")]
+position = Vector2(-34, -126)
