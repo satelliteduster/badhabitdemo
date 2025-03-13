@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://biv8xstsmw4hy"]
+
+[ext_resource type="Texture2D" uid="uid://buotc1crn5dpt" path="res://item_lockbox.png" id="1_81a3v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81a3v"]
+size = Vector2(92, 99)
+
+[node name="lockbox" type="Sprite2D"]
+texture = ExtResource("1_81a3v")
+
+[node name="lockbox_within_reach" type="Area2D" parent="."]
+
+[node name="coll" type="CollisionShape2D" parent="lockbox_within_reach"]
+shape = SubResource("RectangleShape2D_81a3v")
+debug_color = Color(0.999397, 0, 0.114424, 0.42)

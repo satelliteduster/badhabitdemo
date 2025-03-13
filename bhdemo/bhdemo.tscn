@@ -7,7 +7,7 @@
 [node name="bhdemo" type="Node"]
 
 [node name="barbara" parent="." instance=ExtResource("1_qasne")]
-position = Vector2(-1193, -78)
+position = Vector2(29.0001, -1893)
 
 [node name="currentscene" type="Node2D" parent="."]
 metadata/_edit_group_ = true

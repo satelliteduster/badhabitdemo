@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cutht4iaj60is"]
+
+[ext_resource type="Texture2D" uid="uid://bm7028kbgrqb1" path="res://1 - basement.png" id="1_6h7pq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6h7pq"]
+size = Vector2(64.5, 216.5)
+
+[node name="fakebasement" type="StaticBody2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_6h7pq")
+
+[node name="coll" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(278, -231, 353, -231, 356, -426, 480, -427, 476, 533, 32, 533, 32, 559, -35, 559, -34, 534, -480, 535, -474, -424, -354, -424, -356, -235, -286, -235, -285, -425, 281, -426, 276, -241, 326, -555, -582, -557, -584, 627, 572, 625, 577, -555, 331, -555)
+
+[node name="coll1" type="CollisionShape2D" parent="."]
+position = Vector2(320.25, 301.25)
+shape = SubResource("RectangleShape2D_6h7pq")
+
+[node name="coll2" type="CollisionShape2D" parent="."]
+position = Vector2(-322, 299)
+shape = SubResource("RectangleShape2D_6h7pq")

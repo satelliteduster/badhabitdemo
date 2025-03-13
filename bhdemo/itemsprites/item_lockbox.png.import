@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyqvwybvc0c86"
-path="res://.godot/imported/4_boiler room.png-fe76ce4c43b7f01460190b215fe91bbe.ctex"
+uid="uid://buotc1crn5dpt"
+path="res://.godot/imported/item_lockbox.png-34cd4fcc4639c66fea4bc46592fe2699.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bgsprites/4_boiler room.png"
-dest_files=["res://.godot/imported/4_boiler room.png-fe76ce4c43b7f01460190b215fe91bbe.ctex"]
+source_file="res://itemsprites/item_lockbox.png"
+dest_files=["res://.godot/imported/item_lockbox.png-34cd4fcc4639c66fea4bc46592fe2699.ctex"]
 
 [params]
 

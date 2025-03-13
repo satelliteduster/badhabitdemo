@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb346e72j43sl"
-path="res://.godot/imported/3_pantry.png-2abd2b65950afe6e9cd45408d2b471ba.ctex"
+uid="uid://nt6l7jkck3xx"
+path="res://.godot/imported/6_closet.png-a00c30497fa3b1d30acef5afe6e5de9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bgsprites/3_pantry.png"
-dest_files=["res://.godot/imported/3_pantry.png-2abd2b65950afe6e9cd45408d2b471ba.ctex"]
+source_file="res://bgsprites/convent_1stfloor/6_closet.png"
+dest_files=["res://.godot/imported/6_closet.png-a00c30497fa3b1d30acef5afe6e5de9a.ctex"]
 
 [params]
 

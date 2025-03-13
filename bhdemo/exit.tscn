@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbkiohpmlscq6"]
+
+[ext_resource type="Texture2D" uid="uid://cwtfj4b4hubeu" path="res://3 - exit.png" id="1_6sfst"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sfst"]
+size = Vector2(22.5, 65.5)
+
+[node name="exit" type="StaticBody2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_6sfst")
+
+[node name="coll" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(236, 84, 236, 20, -232, 21, -232, 86, -203, 86, -203, 105, -142, 105, -142, 86, 232, 85, 297, 160, -307, 161, -306, -159, 303, -160, 301, 159)
+
+[node name="to_street" type="Area2D" parent="."]
+position = Vector2(224, 55)
+
+[node name="coll" type="CollisionShape2D" parent="to_street"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_6sfst")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)

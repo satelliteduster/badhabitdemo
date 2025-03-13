@@ -8,6 +8,7 @@
 [node name="firstfloor" type="Node2D"]
 
 [node name="hallway1" parent="." instance=ExtResource("1_g1da3")]
+process_mode = 0
 
 [node name="kitchen" parent="." instance=ExtResource("2_qyuiu")]
 position = Vector2(-1100, 0)

@@ -14,3 +14,4 @@
 [node name="thirdfloor" parent="." instance=ExtResource("3_vrevg")]
 
 [node name="basement" parent="." instance=ExtResource("4_5ok6k")]
+position = Vector2(0, -2300)
