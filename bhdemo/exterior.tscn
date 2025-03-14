@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnghkt58yriuk"]
+
+[ext_resource type="Texture2D" uid="uid://dvspgj5xp7s6p" path="res://bgsprites/properchurch/divine_trinity_church_exterior.png" id="1_cfk81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfk81"]
+size = Vector2(91.5, 90)
+
+[node name="outside" type="StaticBody2D"]
+
+[node name="DivineTrinityChurchExterior" type="Sprite2D" parent="."]
+texture = ExtResource("1_cfk81")
+
+[node name="upper wall" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-125, 852, -49, 851, -48, 760, 47, 759, 45, 850, 117, 851, 117, 940, 129, 941, 128, 769, 306, 769, 310, 341, 339, 341, 341, 55, 305, 52, 809, 53, 809, -1247, -801, -1247, -791, 45, -348, 49, -344, 341, -302, 345, -302, 760, -134, 760, -132, 940, -123, 940)
+
+[node name="lower wall" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-613, 1087, 607, 1090, 608, 59, 809, 59, 810, 1265, -778, 1260, -784, 56, -612, 56)
+
+[node name="entrance" type="Area2D" parent="."]
+
+[node name="coll" type="CollisionShape2D" parent="entrance"]
+position = Vector2(-1.75, 806)
+shape = SubResource("RectangleShape2D_cfk81")

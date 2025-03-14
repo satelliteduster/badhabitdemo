@@ -16,4 +16,6 @@ metadata/_edit_lock_ = true
 [node name="properchurch" parent="currentscene" instance=ExtResource("2_8tvq4")]
 
 [node name="convent" parent="currentscene" instance=ExtResource("3_g4gj3")]
+process_mode = 4
+visible = false
 position = Vector2(37, -28)

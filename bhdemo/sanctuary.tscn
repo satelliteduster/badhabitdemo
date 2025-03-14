@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dplgatms44v20"]
+
+[ext_resource type="Texture2D" uid="uid://cch2xb5j676kt" path="res://bgsprites/properchurch/sanctuary.png" id="1_mpngq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpngq"]
+size = Vector2(145.5, 175.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cp7ah"]
+size = Vector2(146, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rydlq"]
+size = Vector2(51, 50)
+
+[node name="sanctuary" type="StaticBody2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_mpngq")
+
+[node name="entrance_left" type="Area2D" parent="."]
+
+[node name="coll" type="CollisionShape2D" parent="entrance_left"]
+position = Vector2(-182.75, -582.375)
+shape = SubResource("RectangleShape2D_mpngq")
+debug_color = Color(0.191224, 0.641906, 3.85046e-07, 0.42)
+
+[node name="entrance_right" type="Area2D" parent="."]
+
+[node name="coll" type="CollisionShape2D" parent="entrance_right"]
+position = Vector2(185, -582)
+shape = SubResource("RectangleShape2D_mpngq")
+debug_color = Color(0.191224, 0.641906, 3.85046e-07, 0.42)
+
+[node name="obs" type="Area2D" parent="."]
+
+[node name="stand1" type="CollisionShape2D" parent="obs"]
+position = Vector2(0, -288.5)
+shape = SubResource("RectangleShape2D_cp7ah")
+
+[node name="stand2" type="CollisionShape2D" parent="obs"]
+position = Vector2(2.5, -430)
+shape = SubResource("RectangleShape2D_rydlq")
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(294, -743, 292, -175, 76, -175, 78, -75, 295, -74, 296, -23, 76, -24, 76, 73, 296, 72, 295, 124, 77, 123, 78, 221, 292, 220, 293, 268, 77, 268, 79, 367, 296, 366, 297, 414, 76, 412, 77, 511, 299, 512, 300, 559, 77, 561, 78, 655, 301, 654, 300, 734, 74, 735, 75, 789, -75, 790, -77, 738, -293, 737, -293, 652, -75, 653, -76, 560, -294, 560, -295, 509, -77, 509, -77, 414, -294, 413, -293, 367, -77, 368, -75, 268, -291, 270, -292, 216, -80, 220, -74, 122, -292, 121, -291, 73, -77, 74, -76, -23, -292, -21, -291, -74, -75, -75, -75, -177, -287, -174, -293, -494, -259, -495, -257, -673, -107, -672, -107, -496, 109, -496, 110, -675, 257, -674, 261, -493, 288, -493, 291, -743, 392, -866, -367, -867, -373, 853, 413, 851, 396, -863)
