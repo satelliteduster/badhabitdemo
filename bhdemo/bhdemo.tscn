@@ -7,15 +7,14 @@
 [node name="bhdemo" type="Node"]
 
 [node name="barbara" parent="." instance=ExtResource("1_qasne")]
-position = Vector2(29.0001, -1893)
+position = Vector2(2996, 960)
 
 [node name="currentscene" type="Node2D" parent="."]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="properchurch" parent="currentscene" instance=ExtResource("2_8tvq4")]
+position = Vector2(3000, 0)
 
 [node name="convent" parent="currentscene" instance=ExtResource("3_g4gj3")]
-process_mode = 4
-visible = false
 position = Vector2(37, -28)

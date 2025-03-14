@@ -4,5 +4,8 @@
 
 [node name="storage" type="StaticBody2D"]
 
-[node name="5Storage" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_8o3ip")
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-147, 38, -197, 38, -196, 96, -148, 95, -148, 160, 105, 158, 105, 66, 167, 65, 166, -27, 106, -27, 106, 10, 42, 9, 40, 61, -23, 61, -23, 32, -88, 33, -88, 11, -255, 11, -256, -258, 246, -256, 250, 223, -255, 222, -255, 15, -147, 15)

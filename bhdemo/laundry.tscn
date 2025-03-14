@@ -4,5 +4,8 @@
 
 [node name="laundry" type="StaticBody2D"]
 
-[node name="6Laundry" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_8o7lk")
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-52, -34, -51, 29, 110, 29, 111, -33, 167, -33, 168, 158, -150, 160, -150, 97, -167, 99, -167, 30, -149, 30, -147, -28, -250, -29, -248, 239, 261, 239, 259, -208, -252, -212, -249, -35)

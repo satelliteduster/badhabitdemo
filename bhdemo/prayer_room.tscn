@@ -4,7 +4,8 @@
 
 [node name="prayer room" type="StaticBody2D"]
 
-[node name="bathroom" type="StaticBody2D" parent="."]
-
-[node name="4PrayerRoom" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_m6a5l")
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, 62, -8, -32, -70, -32, -70, -6, -106, -6, -106, -33, -165, -33, -167, 188, 154, 187, 154, 160, 192, 160, 191, 98, 151, 98, 151, 64, 236, 64, 239, 227, -203, 228, -204, -224, 40, -224, 40, -102, 235, -100, 236, 62)

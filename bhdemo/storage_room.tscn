@@ -9,4 +9,7 @@
 texture = ExtResource("2_lpf1o")
 
 [node name="closet" parent="." instance=ExtResource("1_v7cqa")]
-position = Vector2(-306, 0)
+position = Vector2(-750, 0)
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(201, 0, 201, -216, -207, -216, -205, 186, 203, 186, 201, 3, 92, 3, 92, 38, 133, 38, 133, 92, 97, 92, 97, 125, -94, 125, -94, 87, -133, 87, -133, 36, -95, 36, -95.237, -1.20815)

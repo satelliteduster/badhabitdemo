@@ -11,10 +11,10 @@
 process_mode = 0
 
 [node name="kitchen" parent="." instance=ExtResource("2_qyuiu")]
-position = Vector2(-1100, 0)
+position = Vector2(-1400, 0)
 
 [node name="rectory" parent="." instance=ExtResource("3_38vlk")]
-position = Vector2(1100, 96)
+position = Vector2(1400, 96)
 
 [node name="boiler" parent="." instance=ExtResource("4_4b2fe")]
 position = Vector2(0, -1100)

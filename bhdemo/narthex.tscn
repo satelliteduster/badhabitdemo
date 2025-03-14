@@ -1,21 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyvkk12i0bjl"]
+[gd_scene load_steps=4 format=3 uid="uid://cyvkk12i0bjl"]
 
 [ext_resource type="Texture2D" uid="uid://dc8e4n1ubbdsl" path="res://bgsprites/properchurch/ narthex.png" id="1_tonsl"]
+[ext_resource type="Script" uid="uid://71plx6wemlif" path="res://entrance.gd" id="2_gpp6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tonsl"]
-size = Vector2(141, 143)
+size = Vector2(141, 42)
 
 [node name="narthex" type="StaticBody2D"]
 
-[node name="Narthex" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_tonsl")
 
 [node name="entrance" type="Area2D" parent="."]
+script = ExtResource("2_gpp6q")
 
 [node name="coll" type="CollisionShape2D" parent="entrance"]
-position = Vector2(-3.5, -117.5)
+position = Vector2(-5, -23)
 shape = SubResource("RectangleShape2D_tonsl")
 debug_color = Color(0.160028, 0.644554, 5.77569e-07, 0.42)
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(70, -47, 185, -48, 184, 174, 71, 175, 71, 221, -79, 222, -79, 174, -187, 174, -186, -46, -78, -45, -78, -190, 70, -191, 70, -52, 256, -254, -256, -254, -258, 270, 259, 272, 257, -251)
+polygon = PackedVector2Array(70, -47, 185, -48, 184, 174, 71, 175, 71, 221, -79, 222, -79, 174, -187, 174, -186, -46, 65, -47, 256, -254, -256, -254, -258, 270, 259, 272, 257, -251)

@@ -4,5 +4,8 @@
 
 [node name="recreational" type="StaticBody2D"]
 
-[node name="2Recreational" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_cut8j")
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-5, 26, -5, 9, 56, 9, 56, 39, 90, 39, 90, 90, 54, 90, 54, 157, -74, 157, -73, 28, -124, 28, -126, 199, 128, 198, 126, -207, -122, -207, -124, 24)

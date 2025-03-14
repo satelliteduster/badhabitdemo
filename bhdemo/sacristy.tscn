@@ -4,5 +4,8 @@
 
 [node name="sacristy" type="StaticBody2D"]
 
-[node name="7Sacristy[down]" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_htmfo")
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-150, -31, -52, -31, -52, 66, 75, 67, 75, -29, 263, -27, 259, -241, -239, -243, -237, 215, 266, 215, 263, -25, 168, -25, 169, 157, -149, 157, -149, 95, -191, 94, -191, 34, -150, 34)

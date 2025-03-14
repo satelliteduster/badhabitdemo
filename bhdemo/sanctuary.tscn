@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dplgatms44v20"]
+[gd_scene load_steps=6 format=3 uid="uid://dplgatms44v20"]
 
 [ext_resource type="Texture2D" uid="uid://cch2xb5j676kt" path="res://bgsprites/properchurch/sanctuary.png" id="1_mpngq"]
+[ext_resource type="Script" uid="uid://71plx6wemlif" path="res://entrance.gd" id="2_cp7ah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpngq"]
 size = Vector2(145.5, 175.25)
@@ -17,6 +18,7 @@ size = Vector2(51, 50)
 texture = ExtResource("1_mpngq")
 
 [node name="entrance_left" type="Area2D" parent="."]
+script = ExtResource("2_cp7ah")
 
 [node name="coll" type="CollisionShape2D" parent="entrance_left"]
 position = Vector2(-182.75, -582.375)
@@ -24,20 +26,19 @@ shape = SubResource("RectangleShape2D_mpngq")
 debug_color = Color(0.191224, 0.641906, 3.85046e-07, 0.42)
 
 [node name="entrance_right" type="Area2D" parent="."]
+script = ExtResource("2_cp7ah")
 
 [node name="coll" type="CollisionShape2D" parent="entrance_right"]
 position = Vector2(185, -582)
 shape = SubResource("RectangleShape2D_mpngq")
 debug_color = Color(0.191224, 0.641906, 3.85046e-07, 0.42)
 
-[node name="obs" type="Area2D" parent="."]
-
-[node name="stand1" type="CollisionShape2D" parent="obs"]
-position = Vector2(0, -288.5)
+[node name="stand1" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -273.5)
 shape = SubResource("RectangleShape2D_cp7ah")
 
-[node name="stand2" type="CollisionShape2D" parent="obs"]
-position = Vector2(2.5, -430)
+[node name="stand2" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -415)
 shape = SubResource("RectangleShape2D_rydlq")
 
 [node name="walls" type="CollisionPolygon2D" parent="."]

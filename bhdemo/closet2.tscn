@@ -4,5 +4,9 @@
 
 [node name="closet" type="StaticBody2D"]
 
-[node name="3StorageCloset" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_4plia")
+
+[node name="walls" type="CollisionPolygon2D" parent="."]
+position = Vector2(-38, 0)
+polygon = PackedVector2Array(201, 0, 201, -178, -101.047, -177.709, -101.491, 186, 203, 186, 201, 3, 92, 3, 92, 38, 133, 38, 133, 92, 97, 92, 97, 125, -30.3922, 125, -31.2336, -0.947128)

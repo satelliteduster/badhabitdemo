@@ -4,5 +4,8 @@
 
 [node name="dormitory" type="StaticBody2D"]
 
-[node name="3Dormitories" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_xiylk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(62, 38, 166, 38, 165, 94, 64, 94, 62, 347, -35, 347, -35, 271, -142, 271, -143, 225, -34, 225, -34, 143, -140, 144, -139, 93, -35, 94, -35, 12, -137, 12, -136, -31, -33, -31, -32, -115, -141, -115, -139, -163, -30, -164, -31, -194, 232, -194, 233, -441, -238, -446, -236, 412, 236, 411, 233, -188, 63, -189)

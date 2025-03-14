@@ -12,16 +12,16 @@
 [node name="hallway2" parent="." instance=ExtResource("1_tg3nt")]
 
 [node name="bathroom" parent="." instance=ExtResource("2_xlsm1")]
-position = Vector2(-658, -563)
+position = Vector2(-800, -1000)
 
 [node name="prayer room" parent="." instance=ExtResource("2_w3n41")]
-position = Vector2(-906, -231)
+position = Vector2(-1000, -400)
 
 [node name="sacristy" parent="." instance=ExtResource("3_j8asf")]
-position = Vector2(795, 200)
+position = Vector2(1000, 200)
 
 [node name="vestry" parent="." instance=ExtResource("4_xlsm1")]
-position = Vector2(803, -218)
+position = Vector2(1000, -400)
 
 [node name="storage room" parent="." instance=ExtResource("6_w6ebx")]
-position = Vector2(-696, 199)
+position = Vector2(-1000, 200)
