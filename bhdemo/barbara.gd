@@ -4,8 +4,6 @@ extends CharacterBody2D
 @onready var walking = $AnimatedSprite2D
 
 var lastdir = "down"
-#var checkpoint_pos = Vector2(0, 0)  # default spawn position
-#var cp_pass = false # to check checkpoint passings
 
 func _physics_process(_delta):
 	var input_vector = Vector2.ZERO
@@ -35,26 +33,3 @@ func _physics_process(_delta):
 		walking.play(lastdir + "idle")
 	
 	move_and_slide()
-
-func reset_for_new_scene(): #on entrance into new scene
-	set_deferred("global_position", Vector2()) #position changes based on entry point of each scene + room
-	set_deferred("collision_layer_value", [1, true]) # reset collision physics
-	set_deferred("collision_mask_value", [1, true])
-	
-	visible = true # reset visibility
-	velocity = Vector2.ZERO  # reset velocity
-	walking.play(lastdir + "idle")  # set idle animation
-
-#func hit():
-		#health -= 1 # upon hit, lower hp
-		#if health <= 0: # upon death:
-			#print("you died!")
-			#respawn()
-	
-#func respawn():
-		#health = 1
-		#global_position = checkpoint_pos # respawns at last checkpoint upon death
-
-#func save_checkpoint(new_pos):
-		#checkpoint_pos = new_pos # save checkpoint location (x,y)
-		#cp_pass = true

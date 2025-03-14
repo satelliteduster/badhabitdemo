@@ -10,15 +10,12 @@
 [node name="outside" parent="." instance=ExtResource("1_6d8rv")]
 
 [node name="narthex" parent="." instance=ExtResource("2_kmjsq")]
-visible = false
 position = Vector2(0, -1600)
 
 [node name="sanctuary" parent="." instance=ExtResource("3_ggi0d")]
 process_mode = 4
-visible = false
 position = Vector2(0, -3200)
 
 [node name="atrium" parent="." instance=ExtResource("4_kmjsq")]
 process_mode = 4
-visible = false
 position = Vector2(0, -4800)
