@@ -20,9 +20,3 @@ debug_color = Color(0.160028, 0.644554, 5.77569e-07, 0.42)
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(70, -47, 185, -48, 184, 174, 71, 175, 71, 221, -79, 222, -79, 174, -187, 174, -186, -46, 65, -47, 256, -254, -256, -254, -258, 270, 259, 272, 257, -251)
-
-[node name="nar_spawn" type="Marker2D" parent="."]
-position = Vector2(0, 120)
-
-[node name="nar_spawn2" type="Marker2D" parent="."]
-position = Vector2(0, 25)

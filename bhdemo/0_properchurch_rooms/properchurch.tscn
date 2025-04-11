@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlaubcxhyuuhy"]
+
+[ext_resource type="PackedScene" uid="uid://dnghkt58yriuk" path="res://0_properchurch_rooms/exterior.tscn" id="1_iibtb"]
+[ext_resource type="PackedScene" uid="uid://cyvkk12i0bjl" path="res://0_properchurch_rooms/narthex.tscn" id="2_7yu0y"]
+[ext_resource type="PackedScene" uid="uid://dplgatms44v20" path="res://0_properchurch_rooms/sanctuary.tscn" id="3_wfvxf"]
+[ext_resource type="PackedScene" uid="uid://biaf5k6yp5eiq" path="res://0_properchurch_rooms/atrium.tscn" id="4_cc0kf"]
+
+[node name="properchurch" type="Node2D"]
+
+[node name="outside" parent="." instance=ExtResource("1_iibtb")]
+
+[node name="narthex" parent="." instance=ExtResource("2_7yu0y")]
+position = Vector2(0, -1600)
+
+[node name="sanctuary" parent="." instance=ExtResource("3_wfvxf")]
+position = Vector2(0, -3200)
+
+[node name="atrium" parent="." instance=ExtResource("4_cc0kf")]
+position = Vector2(0, -4800)

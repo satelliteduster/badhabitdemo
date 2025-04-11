@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://1s08yque3gn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl2fi"]
+size = Vector2(45.5, 60)
+
+[node name="room2" type="ColorRect"]
+offset_left = 1736.0
+offset_top = 102.0
+offset_right = 2336.0
+offset_bottom = 552.0
+
+[node name="door" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -136.0
+offset_top = 182.0
+offset_right = -91.0
+offset_bottom = 242.0
+
+[node name="Area2D" type="Area2D" parent="door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door/Area2D"]
+position = Vector2(22.25, 30)
+shape = SubResource("RectangleShape2D_cl2fi")
+
+[node name="spawn2" type="Marker2D" parent="door"]
+position = Vector2(201, 29)

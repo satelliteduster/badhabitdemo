@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://biaf5k6yp5eiq"]
+[gd_scene load_steps=3 format=3 uid="uid://biaf5k6yp5eiq"]
 
 [ext_resource type="Texture2D" uid="uid://cjlleaste6u4d" path="res://bgsprites/properchurch/atrium.png" id="1_qtk4k"]
-[ext_resource type="Script" uid="uid://71plx6wemlif" path="res://entrance.gd" id="2_mgnnn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtk4k"]
 size = Vector2(75, 142.5)
@@ -15,7 +14,6 @@ texture = ExtResource("1_qtk4k")
 polygon = PackedVector2Array(260, -370, 260, 392, 108, 391, 108, 361, -109, 361, -109, 391, -259, 392, -258, -14, -222, -15, -222, -157, -146, -157, -146, -12, 149, -12, 150, -155, 222, -155, 223, -12, 259, -12, 253, -376, 374, -517, -354, -519, -354, 516, 387, 516, 383, -514)
 
 [node name="entrance_left" type="Area2D" parent="."]
-script = ExtResource("2_mgnnn")
 
 [node name="coll" type="CollisionShape2D" parent="entrance_left"]
 position = Vector2(-183.5, -85.25)
@@ -23,7 +21,6 @@ shape = SubResource("RectangleShape2D_qtk4k")
 debug_color = Color(0.191224, 0.641906, 3.85046e-07, 0.42)
 
 [node name="entrance_right" type="Area2D" parent="."]
-script = ExtResource("2_mgnnn")
 
 [node name="coll" type="CollisionShape2D" parent="entrance_right"]
 position = Vector2(186, -84)

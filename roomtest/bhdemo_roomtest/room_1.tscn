@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://sk72arj2jpeq"]
+
+[ext_resource type="Script" uid="uid://i5d521xtgm" path="res://to_room_2.gd" id="1_3t5sg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tohwg"]
+size = Vector2(45.5, 60)
+
+[node name="room1" type="ColorRect"]
+z_index = -3
+offset_left = 287.0
+offset_top = 100.0
+offset_right = 887.0
+offset_bottom = 550.0
+
+[node name="door" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 192.0
+offset_right = 759.0
+offset_bottom = 252.0
+
+[node name="Area2D" type="Area2D" parent="door"]
+script = ExtResource("1_3t5sg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door/Area2D"]
+position = Vector2(22.25, 30)
+shape = SubResource("RectangleShape2D_tohwg")
+
+[node name="spawn1" type="Marker2D" parent="door"]
+position = Vector2(-195, 29)

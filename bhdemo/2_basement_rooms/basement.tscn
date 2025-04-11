@@ -7,11 +7,10 @@
 [node name="basement" type="Node2D"]
 
 [node name="fakebasement" parent="." instance=ExtResource("1_g1xpe")]
+visible = false
 
 [node name="realbasement" parent="." instance=ExtResource("2_q2tl6")]
 process_mode = 4
-visible = false
 
 [node name="exit" parent="." instance=ExtResource("3_q2tl6")]
 process_mode = 4
-visible = false

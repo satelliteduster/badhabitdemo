@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://idw6a782lwvb"]
+[gd_scene load_steps=6 format=3 uid="uid://idw6a782lwvb"]
+
+[ext_resource type="Texture2D" uid="uid://cqj5v4w7ilclg" path="res://icon.svg" id="1_vxvbj"]
+[ext_resource type="Script" uid="uid://75ww22paf2v6" path="res://icon.gd" id="2_du4ie"]
+[ext_resource type="PackedScene" uid="uid://sk72arj2jpeq" path="res://room_1.tscn" id="3_lvf03"]
+[ext_resource type="PackedScene" uid="uid://1s08yque3gn7" path="res://room_2.tscn" id="4_645nv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxvbj"]
+size = Vector2(129, 128)
 
 [node name="roomtest" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(166, 296)
+script = ExtResource("2_du4ie")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_vxvbj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_vxvbj")
+
+[node name="room1" parent="." instance=ExtResource("3_lvf03")]
+
+[node name="room2" parent="." instance=ExtResource("4_645nv")]

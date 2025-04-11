@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cp26eitav7hfr"]
 
-[ext_resource type="Texture2D" uid="uid://c28cyl8yl5e1s" path="res://2_kitchen.png" id="1_ipk1y"]
+[ext_resource type="Texture2D" uid="uid://c28cyl8yl5e1s" path="res://bgsprites/convent_1stfloor/2_kitchen.png" id="1_ipk1y"]
 [ext_resource type="PackedScene" uid="uid://n0ugbclfjndn" path="res://kitchen_table.tscn" id="2_kdutl"]
 [ext_resource type="PackedScene" uid="uid://dvywle8vt8ric" path="res://pantry.tscn" id="2_xsyy8"]
 
@@ -33,9 +33,9 @@ debug_color = Color(0.432011, 0.601005, 0, 0.42)
 polygon = PackedVector2Array(314, -404, 202, -329, 201, 86, 289, 86, 288, 167, 202, 167, 202, 334, -215, 333, -210, -107, -168, -107, -169, -251, -85, -251, -86, -107, 197, -107, 199, -333, 310, -407, -297, -407, -298, 405, 317, 403)
 
 [node name="to_hallway" type="Area2D" parent="."]
-position = Vector2(-462, 123)
+position = Vector2(240, 125)
 
 [node name="coll" type="CollisionShape2D" parent="to_hallway"]
-position = Vector2(722.75, 3)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_7yojt")
 debug_color = Color(0.417816, 0.604598, 0, 0.42)

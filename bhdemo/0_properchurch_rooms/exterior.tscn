@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnghkt58yriuk"]
+[gd_scene load_steps=5 format=3 uid="uid://dnghkt58yriuk"]
 
 [ext_resource type="Texture2D" uid="uid://dvspgj5xp7s6p" path="res://bgsprites/properchurch/divine_trinity_church_exterior.png" id="1_cfk81"]
-[ext_resource type="Script" uid="uid://5gc1s7qe76bq" path="res://entrance.gd" id="2_5yt4q"]
+[ext_resource type="PackedScene" uid="uid://dyxot8bmwiqaj" path="res://left.tscn" id="2_g6w6y"]
+[ext_resource type="PackedScene" uid="uid://bdfo2ch71qngw" path="res://door.tscn" id="3_pi21g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfk81"]
 size = Vector2(91.5, 27)
@@ -17,12 +18,28 @@ polygon = PackedVector2Array(-125, 852, 117, 851, 117, 940, 129, 941, 128, 769, 
 [node name="lower wall" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-613, 1087, 607, 1090, 608, 59, 809, 59, 810, 1265, -778, 1260, -784, 56, -612, 56)
 
-[node name="entrance" type="Area2D" parent="."]
-script = ExtResource("2_5yt4q")
+[node name="doors" type="Node" parent="."]
 
-[node name="coll" type="CollisionShape2D" parent="entrance"]
+[node name="up" type="Area2D" parent="doors"]
+
+[node name="coll" type="CollisionShape2D" parent="doors/up"]
 position = Vector2(-2, 865.5)
 shape = SubResource("RectangleShape2D_cfk81")
 
-[node name="ext_spawn" type="Marker2D" parent="."]
-position = Vector2(0, 955)
+[node name="left" parent="doors" instance=ExtResource("2_g6w6y")]
+destination_room = "outside"
+destination_tag = "E"
+spawn_direction = "right"
+
+[node name="right" parent="doors" instance=ExtResource("3_pi21g")]
+destination_room = "outside"
+destination_tag = "W"
+spawn_direction = "left"
+
+[node name="col" parent="doors/right" index="0"]
+position = Vector2(582, 980)
+
+[node name="spawn" parent="doors/right" index="1"]
+position = Vector2(515, 982)
+
+[editable path="doors/right"]

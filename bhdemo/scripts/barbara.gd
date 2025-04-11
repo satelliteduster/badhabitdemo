@@ -1,9 +1,19 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var speed = 150
 @onready var walking = $AnimatedSprite2D
 
 var lastdir = "down"
+
+func _ready():
+	SceneManager.on_trigger_player_spawn.connect(_on_spawn)
+	
+
+func _on_spawn(position: Vector2, direction: String):
+	global_position = position
+	lastdir = direction
 
 func _physics_process(_delta):
 	var input_vector = Vector2.ZERO
