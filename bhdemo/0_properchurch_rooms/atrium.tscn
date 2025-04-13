@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://biaf5k6yp5eiq"]
 
 [ext_resource type="Texture2D" uid="uid://cjlleaste6u4d" path="res://bgsprites/properchurch/atrium.png" id="1_qtk4k"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtk4k"]
-size = Vector2(75, 142.5)
+[ext_resource type="PackedScene" uid="uid://bdfo2ch71qngw" path="res://door.tscn" id="2_unmgo"]
 
 [node name="atrium" type="StaticBody2D"]
 
@@ -11,18 +9,57 @@ size = Vector2(75, 142.5)
 texture = ExtResource("1_qtk4k")
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(260, -370, 260, 392, 108, 391, 108, 361, -109, 361, -109, 391, -259, 392, -258, -14, -222, -15, -222, -157, -146, -157, -146, -12, 149, -12, 150, -155, 222, -155, 223, -12, 259, -12, 253, -376, 374, -517, -354, -519, -354, 516, 387, 516, 383, -514)
+polygon = PackedVector2Array(260, -370, 262, 412, 107, 412, 108, 361, -109, 361, -109, 412, -260, 413, -258, -14, -222, -15, -222, -157, -146, -157, -146, -12, 149, -12, 150, -155, 222, -155, 223, -12, 259, -12, 253, -376, 374, -517, -354, -519, -354, 516, 387, 516, 383, -514)
 
-[node name="entrance_left" type="Area2D" parent="."]
+[node name="up_left" parent="." instance=ExtResource("2_unmgo")]
+position = Vector2(-182, -37)
+scale = Vector2(0.75, 1)
+destination_room = "exterior"
 
-[node name="coll" type="CollisionShape2D" parent="entrance_left"]
-position = Vector2(-183.5, -85.25)
-shape = SubResource("RectangleShape2D_qtk4k")
-debug_color = Color(0.191224, 0.641906, 3.85046e-07, 0.42)
+[node name="col" parent="up_left" index="0"]
+position = Vector2(-1.5, 0)
+metadata/_edit_lock_ = true
 
-[node name="entrance_right" type="Area2D" parent="."]
+[node name="spawn" parent="up_left" index="1"]
+position = Vector2(0, 60)
 
-[node name="coll" type="CollisionShape2D" parent="entrance_right"]
-position = Vector2(186, -84)
-shape = SubResource("RectangleShape2D_qtk4k")
-debug_color = Color(0.191224, 0.641906, 3.85046e-07, 0.42)
+[node name="up_right" parent="." instance=ExtResource("2_unmgo")]
+position = Vector2(189, -36)
+scale = Vector2(0.75, 1)
+destination_room = "exterior"
+
+[node name="col" parent="up_right" index="0"]
+position = Vector2(-1.5, 0)
+metadata/_edit_lock_ = true
+
+[node name="spawn" parent="up_right" index="1"]
+position = Vector2(0, 60)
+
+[node name="down_left" parent="." instance=ExtResource("2_unmgo")]
+position = Vector2(-186, 388)
+destination_room = "sanctuary_up_left"
+
+[node name="col" parent="down_left" index="0"]
+position = Vector2(0, 0)
+scale = Vector2(1.5, 1)
+metadata/_edit_lock_ = true
+
+[node name="spawn" parent="down_left" index="1"]
+position = Vector2(0, -95)
+
+[node name="down_right" parent="." instance=ExtResource("2_unmgo")]
+position = Vector2(184, 389)
+destination_room = "sanctuary_up_right"
+
+[node name="col" parent="down_right" index="0"]
+position = Vector2(0, 0)
+scale = Vector2(1.5, 1)
+metadata/_edit_lock_ = true
+
+[node name="spawn" parent="down_right" index="1"]
+position = Vector2(0, -95)
+
+[editable path="up_left"]
+[editable path="up_right"]
+[editable path="down_left"]
+[editable path="down_right"]

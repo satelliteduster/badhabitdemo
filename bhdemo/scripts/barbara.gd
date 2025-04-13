@@ -9,11 +9,13 @@ var lastdir = "down"
 
 func _ready():
 	SceneManager.on_trigger_player_spawn.connect(_on_spawn)
-	
+	pass
 
 func _on_spawn(position: Vector2, direction: String):
-	global_position = position
-	lastdir = direction
+	visible = true # reset visibility
+	velocity = Vector2.ZERO  # reset velocity
+	set_deferred("global_position", position) #set position based on entrance
+	lastdir = direction #set direction based on entrance
 
 func _physics_process(_delta):
 	var input_vector = Vector2.ZERO

@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://b6tktttggsejv"]
 
-[ext_resource type="Script" uid="uid://pb0ctvx6haij" path="res://walking.gd" id="1_cbiav"]
+[ext_resource type="Script" uid="uid://pb0ctvx6haij" path="res://scripts/barbara.gd" id="1_cbiav"]
 [ext_resource type="Texture2D" uid="uid://cjhy0t53hd3j0" path="res://barbarasprites/forward/barbfw-0.png" id="2_gmc5i"]
 [ext_resource type="Texture2D" uid="uid://s2qjx5b8lh3d" path="res://barbarasprites/forward/barbfw-1.png" id="3_c8eac"]
 [ext_resource type="Texture2D" uid="uid://t1oc4q80h6l5" path="res://barbarasprites/forward/barbfw-2.png" id="4_5rpch"]
