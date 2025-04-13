@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpjjpfj45bd28"]
 
-[ext_resource type="Script" uid="uid://8hktq8q0lwgk" path="res://bhcontroller.gd" id="1_nccpt"]
+[ext_resource type="Script" uid="uid://8hktq8q0lwgk" path="res://scripts/bhcontroller.gd" id="1_nccpt"]
 [ext_resource type="PackedScene" uid="uid://b6tktttggsejv" path="res://barbara.tscn" id="1_qasne"]
 [ext_resource type="PackedScene" uid="uid://danoho6thp1tg" path="res://0_properchurch_rooms/properchurch.tscn" id="2_8tvq4"]
 [ext_resource type="PackedScene" uid="uid://cnmeqqgl3a2oo" path="res://1_convent_rooms/convent.tscn" id="3_g4gj3"]
@@ -10,6 +10,7 @@ script = ExtResource("1_nccpt")
 
 [node name="barbara" parent="." instance=ExtResource("1_qasne")]
 position = Vector2(2997, 959)
+scale = Vector2(0.34, 0.34)
 
 [node name="currentscene" type="Node2D" parent="."]
 metadata/_edit_group_ = true

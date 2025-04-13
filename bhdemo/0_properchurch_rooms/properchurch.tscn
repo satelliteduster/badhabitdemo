@@ -10,6 +10,9 @@
 
 [node name="exterior" parent="." instance=ExtResource("1_6d8rv")]
 
+[node name="upper wall" parent="exterior" index="1"]
+polygon = PackedVector2Array(-125, 852, 117, 851, 117, 940, 129, 941, 128, 769, 306, 769, 310, 341, 305, 52, 809, 53, 809, -1247, -801, -1247, -791, 45, -309, 50, -306, 338, -302, 760, -134, 760, -132, 940, -123, 940)
+
 [node name="narthex" parent="." instance=ExtResource("2_kmjsq")]
 position = Vector2(0, -1600)
 

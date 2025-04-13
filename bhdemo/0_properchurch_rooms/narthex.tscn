@@ -32,11 +32,12 @@ position = Vector2(-5, 245)
 destination_room = "exterior"
 
 [node name="col" parent="down" index="0"]
-position = Vector2(-1, 10)
+position = Vector2(1, -21)
 scale = Vector2(1.5, 1)
 
 [node name="spawn" parent="down" index="1"]
 position = Vector2(0, -95)
+metadata/_edit_lock_ = true
 
 [editable path="up"]
 [editable path="down"]
