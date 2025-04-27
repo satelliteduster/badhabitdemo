@@ -1,27 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://ocqhxc651015"]
+[gd_scene load_steps=6 format=3 uid="uid://ocqhxc651015"]
 
 [ext_resource type="Texture2D" uid="uid://c5kxkl4521oiq" path="res://bgsprites/convent_1stfloor/1_hallway.png" id="1_fduof"]
-[ext_resource type="PackedScene" uid="uid://col1h5jc61yer" path="res://upstairs.tscn" id="2_if4va"]
+[ext_resource type="PackedScene" uid="uid://col1h5jc61yer" path="res://1_convent_rooms/upstairs.tscn" id="2_if4va"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="3_35dky"]
+[ext_resource type="PackedScene" uid="uid://bdfo2ch71qngw" path="res://door.tscn" id="3_e84vp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_if4va"]
 size = Vector2(37, 77)
 
 [node name="hallway_1" type="StaticBody2D"]
-process_mode = 4
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(-3, 0)
 texture = ExtResource("1_fduof")
+metadata/_edit_lock_ = true
 
 [node name="upstairs" parent="." instance=ExtResource("2_if4va")]
 position = Vector2(-5, -235)
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
 position = Vector2(-3, 0)
-polygon = PackedVector2Array(419, -369, 536, -495, 534, 468, -530, 474, -530, -500, 535, -497, 417, -371, 417, -168, 46, -168, 46, -302, -51, -303, -51, -168, -417, -168, -417, 83, -479, 83, -479, 164, -420, 164, -420, 379, -291, 379, -291, -42, -255, -42, -255, 32, -166, 32, -166, -43, 160, -43, 160, 23, 253, 23, 253, -43, 295, -43, 294, 382, 418, 382, 418, 298, 480, 298, 480, 205, 417, 205, 417, -42, 473, -42, 473, -127, 419, -127)
+polygon = PackedVector2Array(419, -369, 536, -495, 534, 468, -530, 474, -530, -500, 535, -497, 417, -371, 417, -168, 46, -168, 46, -302, -51, -303, -51, -168, -417, -168, -417, 83, -479, 83, -479, 164, -420, 164, -420, 379, -291, 379, -291, -42, -255, -42, -255, 32, -166, 32, -166, -43, 160, -43, 159, 30, 253, 29, 253, -43, 295, -43, 294, 382, 418, 382, 418, 298, 480, 298, 480, 205, 417, 205, 417, -42, 473, -42, 473, -127, 419, -127)
 
 [node name="to_kitchen" type="Area2D" parent="."]
 position = Vector2(-462, 123)
+script = ExtResource("3_35dky")
+destination_room = "kitchen_right"
 
 [node name="coll" type="CollisionShape2D" parent="to_kitchen"]
 position = Vector2(-0.5, 0.5)
@@ -29,8 +33,12 @@ shape = SubResource("RectangleShape2D_if4va")
 debug_color = Color(0.417816, 0.604598, 0, 0.42)
 metadata/_edit_lock_ = true
 
+[node name="spawn" type="Marker2D" parent="to_kitchen"]
+position = Vector2(63, -15)
+
 [node name="to_rectory" type="Area2D" parent="."]
 position = Vector2(455, 252)
+script = ExtResource("3_35dky")
 
 [node name="coll" type="CollisionShape2D" parent="to_rectory"]
 position = Vector2(-0.5, 0.5)
@@ -38,11 +46,41 @@ shape = SubResource("RectangleShape2D_if4va")
 debug_color = Color(0.419608, 0.603922, 0, 0.419608)
 metadata/_edit_lock_ = true
 
+[node name="spawn" type="Marker2D" parent="to_rectory"]
+position = Vector2(-61, -21)
+
 [node name="to_boiler" type="Area2D" parent="."]
 position = Vector2(451.375, -84)
+script = ExtResource("3_35dky")
 
 [node name="coll" type="CollisionShape2D" parent="to_boiler"]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_if4va")
 debug_color = Color(0.419608, 0.603922, 0, 0.419608)
 metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="to_boiler"]
+position = Vector2(-59.375, -16)
+
+[node name="to_atrium_L" parent="." instance=ExtResource("3_e84vp")]
+position = Vector2(-215, -1)
+destination_room = "atrium_up_left"
+
+[node name="col" parent="to_atrium_L" index="0"]
+position = Vector2(1, 8)
+
+[node name="spawn" parent="to_atrium_L" index="1"]
+position = Vector2(2, -81)
+
+[node name="to_atrium_R" parent="." instance=ExtResource("3_e84vp")]
+position = Vector2(-215, -1)
+destination_room = "atrium_up_right"
+
+[node name="col" parent="to_atrium_R" index="0"]
+position = Vector2(419, 5)
+
+[node name="spawn" parent="to_atrium_R" index="1"]
+position = Vector2(421, -79)
+
+[editable path="to_atrium_L"]
+[editable path="to_atrium_R"]

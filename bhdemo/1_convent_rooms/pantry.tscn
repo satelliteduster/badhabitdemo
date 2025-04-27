@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvywle8vt8ric"]
+[gd_scene load_steps=4 format=3 uid="uid://dvywle8vt8ric"]
 
-[ext_resource type="Texture2D" uid="uid://bb346e72j43sl" path="res://3_pantry.png" id="1_p3pww"]
+[ext_resource type="Texture2D" uid="uid://bb346e72j43sl" path="res://bgsprites/convent_1stfloor/3_pantry.png" id="1_p3pww"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_llsvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3pww"]
 size = Vector2(36.75, 77)
@@ -16,7 +17,12 @@ polygon = PackedVector2Array(82, 0, 126, -44, -123, -45, -123, 258, 127, 258, 12
 [node name="to_kitchen" type="Area2D" parent="."]
 position = Vector2(3, 205)
 rotation = 1.5708
+script = ExtResource("2_llsvk")
+destination_room = "kitchen_up"
 
 [node name="coll" type="CollisionShape2D" parent="to_kitchen"]
 shape = SubResource("RectangleShape2D_p3pww")
 debug_color = Color(0.432011, 0.601005, 0, 0.42)
+
+[node name="spawn" type="Marker2D" parent="to_kitchen"]
+position = Vector2(-83, 3.0003)

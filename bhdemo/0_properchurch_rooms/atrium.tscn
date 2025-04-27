@@ -14,7 +14,7 @@ polygon = PackedVector2Array(260, -370, 262, 412, 107, 412, 108, 361, -109, 361,
 [node name="up_left" parent="." instance=ExtResource("2_unmgo")]
 position = Vector2(-182, -37)
 scale = Vector2(0.75, 1)
-destination_room = "exterior"
+destination_room = "first_floor_left"
 
 [node name="col" parent="up_left" index="0"]
 position = Vector2(-1.5, 0)
@@ -26,7 +26,7 @@ position = Vector2(0, 60)
 [node name="up_right" parent="." instance=ExtResource("2_unmgo")]
 position = Vector2(189, -36)
 scale = Vector2(0.75, 1)
-destination_room = "exterior"
+destination_room = "first_floor_right"
 
 [node name="col" parent="up_right" index="0"]
 position = Vector2(-1.5, 0)

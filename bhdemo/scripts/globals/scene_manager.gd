@@ -3,38 +3,27 @@ extends Node
 #const MAIN_SCENE := preload("res://0_properchurch_rooms/properchurch.tscn")
 
 const SPAWN_POINTS := {
-	"exterior": {
-		"position": Vector2(3000, 919),
-		"direction": "down"
-	},
-	"narthex_down": {
-		"position": Vector2(2996, -1472),
-		"direction": "up"
-	},
-	"narthex_up": {
-		"position": Vector2(3000, -1612),
-		"direction": "down"
-	},
-	"sanctuary_down": {
-		"position": Vector2(3000, -2515),
-		"direction": "up"
-	},
-	"sanctuary_up_left": {
-		"position": Vector2(2815, -3675),
-		"direction": "down"
-	},
-	"sanctuary_up_right": {
-		"position": Vector2(3185, -3675),
-		"direction": "down"
-	},
-	"atrium_down_left": {
-		"position": Vector2(2815, -4505),
-		"direction": "up"
-	},
-	"atrium_down_right": {
-		"position": Vector2(3183, -4505),
-		"direction": "up"
-	}
+	"exterior": {"position": Vector2(3000, 919), "direction": "down"},
+	
+	"narthex_down": {"position": Vector2(2996, -1472),"direction": "up"},
+	"narthex_up": {"position": Vector2(3000, -1612), "direction": "down"},
+	
+	"sanctuary_down": {"position": Vector2(3000, -2515), "direction": "up"},
+	"sanctuary_up_left": {"position": Vector2(2815, -3675), "direction": "down"},
+	"sanctuary_up_right": {"position": Vector2(3185, -3675), "direction": "down"},
+	
+	"atrium_down_left": {"position": Vector2(2815, -4505), "direction": "up"},
+	"atrium_down_right": {"position": Vector2(3183, -4505), "direction": "up"},
+	"atrium_up_left": {"position": Vector2(2818,-4777), "direction": "down"},
+	"atrium_up_right": {"position": Vector2(3189, -4775), "direction": "down"},
+	
+	"first_floor_left": {"position": Vector2(-177,-109), "direction": "up"},
+	"first_floor_right": {"position": Vector2(242,-107), "direction": "up"},
+	
+	"kitchen_out": {"position": Vector2(-362, 80), "direction": "left"},
+	"kitchen_right": {"position": Vector2(-1180, 78), "direction": "right"},
+	"kitchen_up": {"position": Vector2(-1495, -110), "direction": "left"},
+	"pantry_down": {"position": Vector2(-1490, -705), "direction": "right"}
 }
 
 signal on_trigger_player_spawn(position: Vector2, direction: String)
@@ -42,10 +31,6 @@ signal on_trigger_player_spawn(position: Vector2, direction: String)
 func go_to_area(area_tag: String) -> void:
 	var spawn_data = SPAWN_POINTS.get(area_tag)
 	if spawn_data:
-		#if get_tree().currentscene.name != "properchurch":
-			#get_tree().change_scene_to_packed.call_deferred(MAIN_SCENE)
-		
-		# Trigger the player spawn after scene load
 		call_deferred("trigger_player_spawn", spawn_data.position, spawn_data.direction)
 
 func trigger_player_spawn(position: Vector2, direction: String) -> void:

@@ -9,7 +9,8 @@
 script = ExtResource("1_nccpt")
 
 [node name="barbara" parent="." instance=ExtResource("1_qasne")]
-position = Vector2(2997, 959)
+z_index = 1
+position = Vector2(-1490, -123)
 scale = Vector2(0.34, 0.34)
 
 [node name="currentscene" type="Node2D" parent="."]

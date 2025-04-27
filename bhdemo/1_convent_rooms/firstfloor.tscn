@@ -1,20 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2hkx545w4dij"]
+[gd_scene load_steps=6 format=3 uid="uid://d2hkx545w4dij"]
 
-[ext_resource type="PackedScene" uid="uid://ocqhxc651015" path="res://hallway_1.tscn" id="1_g1da3"]
-[ext_resource type="PackedScene" uid="uid://cp26eitav7hfr" path="res://kitchen.tscn" id="2_qyuiu"]
-[ext_resource type="PackedScene" uid="uid://cpco5bau7emo" path="res://rectory.tscn" id="3_38vlk"]
-[ext_resource type="PackedScene" uid="uid://cgwj14tug3v6y" path="res://boiler.tscn" id="4_4b2fe"]
+[ext_resource type="PackedScene" uid="uid://ocqhxc651015" path="res://1_convent_rooms/hallway_1.tscn" id="1_g1da3"]
+[ext_resource type="PackedScene" uid="uid://cp26eitav7hfr" path="res://1_convent_rooms/kitchen.tscn" id="2_qyuiu"]
+[ext_resource type="Script" uid="uid://cop0ghdqslaf" path="res://scripts/level.gd" id="2_wal0t"]
+[ext_resource type="PackedScene" uid="uid://cpco5bau7emo" path="res://1_convent_rooms/rectory.tscn" id="3_38vlk"]
+[ext_resource type="PackedScene" uid="uid://cgwj14tug3v6y" path="res://1_convent_rooms/boiler.tscn" id="4_4b2fe"]
 
 [node name="firstfloor" type="Node2D"]
 
 [node name="hallway1" parent="." instance=ExtResource("1_g1da3")]
-process_mode = 0
+script = ExtResource("2_wal0t")
 
 [node name="kitchen" parent="." instance=ExtResource("2_qyuiu")]
 position = Vector2(-1400, 0)
+script = ExtResource("2_wal0t")
 
 [node name="rectory" parent="." instance=ExtResource("3_38vlk")]
 position = Vector2(1400, 96)
+script = ExtResource("2_wal0t")
 
 [node name="boiler" parent="." instance=ExtResource("4_4b2fe")]
 position = Vector2(0, -1100)
+script = ExtResource("2_wal0t")
