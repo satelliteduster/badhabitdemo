@@ -39,6 +39,7 @@ position = Vector2(63, -15)
 [node name="to_rectory" type="Area2D" parent="."]
 position = Vector2(455, 252)
 script = ExtResource("3_35dky")
+destination_room = "rectory_left"
 
 [node name="coll" type="CollisionShape2D" parent="to_rectory"]
 position = Vector2(-0.5, 0.5)
@@ -52,6 +53,7 @@ position = Vector2(-61, -21)
 [node name="to_boiler" type="Area2D" parent="."]
 position = Vector2(451.375, -84)
 script = ExtResource("3_35dky")
+destination_room = "boiler_left"
 
 [node name="coll" type="CollisionShape2D" parent="to_boiler"]
 position = Vector2(-0.5, 0.5)

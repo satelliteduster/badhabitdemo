@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://7rhj0athn02i"]
 
-[ext_resource type="Texture2D" uid="uid://nt6l7jkck3xx" path="res://6_closet.png" id="1_48ji0"]
-[ext_resource type="PackedScene" uid="uid://c6eiouwhimtlj" path="res://basement_key.tscn" id="2_bewde"]
+[ext_resource type="Texture2D" uid="uid://nt6l7jkck3xx" path="res://bgsprites/convent_1stfloor/6_closet.png" id="1_48ji0"]
+[ext_resource type="PackedScene" uid="uid://c6eiouwhimtlj" path="res://1_convent_rooms/basement_key.tscn" id="2_bewde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bewde"]
 size = Vector2(36.75, 77)

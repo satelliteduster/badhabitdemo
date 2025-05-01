@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b6tktttggsejv"]
+[gd_scene load_steps=22 format=3 uid="uid://b6tktttggsejv"]
 
 [ext_resource type="Script" uid="uid://pb0ctvx6haij" path="res://scripts/barbara.gd" id="1_cbiav"]
 [ext_resource type="Texture2D" uid="uid://cjhy0t53hd3j0" path="res://barbarasprites/forward/barbfw-0.png" id="2_gmc5i"]
@@ -112,7 +112,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n74ex"]
 size = Vector2(20, 7.72057)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_sgm8p"]
+radius = 185.024
+
+[sub_resource type="LabelSettings" id="LabelSettings_sgm8p"]
+font_size = 75
+
 [node name="barbara" type="CharacterBody2D"]
+light_mask = 3
+visibility_layer = 3
 z_index = 2
 script = ExtResource("1_cbiav")
 
@@ -121,18 +129,53 @@ sprite_frames = SubResource("SpriteFrames_j7h5h")
 animation = &"downidle"
 frame_progress = 0.338165
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="coll" type="CollisionShape2D" parent="."]
 position = Vector2(0, 102.941)
 scale = Vector2(10.25, 16)
 shape = SubResource("RectangleShape2D_n74ex")
 one_way_collision_margin = 10.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="camera" type="Camera2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="shadow" type="ColorRect" parent="."]
 z_index = -1
 offset_left = -73.5294
 offset_top = 91.1765
 offset_right = 76.4706
 offset_bottom = 191.176
 color = Color(0, 0, 0, 0.372549)
+
+[node name="interaction" type="Node2D" parent="."]
+
+[node name="int_area" type="Area2D" parent="interaction"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="coll2" type="CollisionShape2D" parent="interaction/int_area"]
+z_index = -1
+shape = SubResource("CircleShape2D_sgm8p")
+debug_color = Color(0.364706, 0.615686, 0, 0.137255)
+
+[node name="text" type="Label" parent="interaction"]
+z_index = 1
+offset_left = -626.0
+offset_top = 326.0
+offset_right = 624.0
+offset_bottom = 429.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "test"
+label_settings = SubResource("LabelSettings_sgm8p")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="textbox" type="ColorRect" parent="interaction/text"]
+layout_mode = 0
+offset_left = 52.0
+offset_right = 1202.0
+offset_bottom = 107.0
+color = Color(0.219608, 0, 0.537255, 0.270588)
+
+[connection signal="area_entered" from="interaction/int_area" to="." method="_on_int_area_area_entered"]
+[connection signal="area_exited" from="interaction/int_area" to="." method="_on_int_area_area_exited"]

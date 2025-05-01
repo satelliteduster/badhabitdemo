@@ -23,7 +23,13 @@ const SPAWN_POINTS := {
 	"kitchen_out": {"position": Vector2(-362, 80), "direction": "left"},
 	"kitchen_right": {"position": Vector2(-1180, 78), "direction": "right"},
 	"kitchen_up": {"position": Vector2(-1495, -110), "direction": "left"},
-	"pantry_down": {"position": Vector2(-1490, -705), "direction": "right"}
+	"pantry_down": {"position": Vector2(-1490, -705), "direction": "right"},
+	
+	"boiler_out": {"position": Vector2(429, -128), "direction": "right"},
+	"boiler_left": {"position": Vector2(-76, -1062), "direction": "left"},
+	
+	"rectory_out": {"position": Vector2(431, 203), "direction": "left"},
+	"rectory_left": {"position": Vector2(1267, 211), "direction": "right"}
 }
 
 signal on_trigger_player_spawn(position: Vector2, direction: String)

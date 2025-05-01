@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://n0ugbclfjndn"]
+[gd_scene load_steps=3 format=3 uid="uid://n0ugbclfjndn"]
 
 [ext_resource type="Texture2D" uid="uid://b7sbdyhlyvuv3" path="res://itemsprites/item_kitchentable.png" id="1_1g6it"]
+[ext_resource type="PackedScene" uid="uid://dkcwe1dwopa71" path="res://itembox.tscn" id="2_puao0"]
 
 [node name="kitchen table" type="Sprite2D"]
 texture = ExtResource("1_1g6it")
@@ -9,3 +10,15 @@ texture = ExtResource("1_1g6it")
 
 [node name="coll" type="CollisionPolygon2D" parent="kt_area"]
 polygon = PackedVector2Array(-42, 140, -1, 116, -1, 79, 16, 81, 63, 52, 64, 27, 95, 8, 107, -22, 106, -50, 85, -69, 59, -83, 20, -88, -9, -82, -36, -68, -44, -61, -61, -72, -60, -134, -106, -107, -107, -4, -66, 14, -87, 14, -87, 114)
+
+[node name="bible" parent="." instance=ExtResource("2_puao0")]
+interact_label = "... a bible?"
+interact_type = "print_text"
+interact_value = "and god said, \"uhh idk lmao\""
+
+[node name="coll2" parent="bible" index="0"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(66, -61)
+
+[editable path="bible"]

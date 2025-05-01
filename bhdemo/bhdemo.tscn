@@ -10,8 +10,38 @@ script = ExtResource("1_nccpt")
 
 [node name="barbara" parent="." instance=ExtResource("1_qasne")]
 z_index = 1
-position = Vector2(-1490, -123)
+position = Vector2(1320, 107)
 scale = Vector2(0.34, 0.34)
+
+[node name="AnimatedSprite2D" parent="barbara" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="coll" parent="barbara" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="camera" parent="barbara" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="shadow" parent="barbara" index="3"]
+metadata/_edit_lock_ = true
+
+[node name="interaction" parent="barbara" index="4"]
+metadata/_edit_lock_ = true
+
+[node name="int_area" parent="barbara/interaction" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="coll2" parent="barbara/interaction/int_area" index="0"]
+debug_color = Color(0.364706, 0.615686, 0, 0.137255)
+metadata/_edit_lock_ = true
+
+[node name="text" parent="barbara/interaction" index="1"]
+offset_top = 752.941
+offset_bottom = 855.941
+metadata/_edit_lock_ = true
+
+[node name="textbox" parent="barbara/interaction/text" index="0"]
+color = Color(0.219608, 0, 0.537255, 0.270588)
 
 [node name="currentscene" type="Node2D" parent="."]
 metadata/_edit_group_ = true
@@ -23,6 +53,7 @@ position = Vector2(3000, 0)
 [node name="convent" parent="currentscene" instance=ExtResource("3_g4gj3")]
 position = Vector2(37, -28)
 
+[editable path="barbara"]
 [editable path="currentscene/properchurch"]
 [editable path="currentscene/properchurch/exterior"]
 [editable path="currentscene/properchurch/exterior/up"]

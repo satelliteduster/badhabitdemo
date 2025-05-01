@@ -5,10 +5,14 @@ class_name Player
 @export var speed = 150
 @onready var walking = $AnimatedSprite2D
 
+@onready var interactions = []
+@onready var interactlabel = $interaction/text
+
 var lastdir = "down"
 
 func _ready():
 	SceneManager.on_trigger_player_spawn.connect(_on_spawn)
+	_update_interactions()
 	pass
 
 func _on_spawn(position: Vector2, direction: String):
@@ -45,3 +49,32 @@ func _physics_process(_delta):
 		walking.play(lastdir + "idle")
 	
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("interact"):
+		execute_interactions()
+
+#re:interaction v
+
+func _on_int_area_area_entered(area: Area2D) -> void:
+	if area is Interactive:
+		interactions.insert(0, area)
+		_update_interactions()
+
+func _on_int_area_area_exited(area: Area2D) -> void:
+	if area is Interactive:
+		interactions.erase(area)
+		_update_interactions()
+
+func _update_interactions():
+	if interactions:
+		interactlabel.text = interactions[0].interact_label
+	else:
+		interactlabel.text = ""
+
+func execute_interactions():
+	if interactions:
+		var current_int = interactions[0]
+		match current_int.interact_type:
+			"print_text" : print(current_int.interact_value)
+			#"collectible" : 
+			#"usable": 

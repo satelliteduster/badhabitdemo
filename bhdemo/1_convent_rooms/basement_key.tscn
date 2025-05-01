@@ -1,16 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6eiouwhimtlj"]
 
-[ext_resource type="Texture2D" uid="uid://dopd756f1hhew" path="res://item_basementkey.png" id="1_oddt5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oddt5"]
-size = Vector2(83, 66.5)
+[ext_resource type="Texture2D" uid="uid://dopd756f1hhew" path="res://itemsprites/item_basementkey.png" id="1_oddt5"]
+[ext_resource type="PackedScene" uid="uid://dkcwe1dwopa71" path="res://itembox.tscn" id="2_4gcoy"]
 
 [node name="basement key" type="Sprite2D"]
 texture = ExtResource("1_oddt5")
 
-[node name="key_within_reach" type="Area2D" parent="."]
+[node name="itembox" parent="." instance=ExtResource("2_4gcoy")]
+interact_label = "there it is..."
+interact_type = "usable"
+interact_value = "you collected a key!"
 
-[node name="coll" type="CollisionShape2D" parent="key_within_reach"]
-position = Vector2(1, 108)
-shape = SubResource("RectangleShape2D_oddt5")
-debug_color = Color(1, 0.000887435, 0.0813889, 0.42)
+[node name="coll2" parent="itembox" index="0"]
+position = Vector2(0, 93)
+
+[editable path="itembox"]

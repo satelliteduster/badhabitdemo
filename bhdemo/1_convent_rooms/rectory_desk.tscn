@@ -1,11 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://qoy3u8h0o7yq"]
+[gd_scene load_steps=3 format=3 uid="uid://qoy3u8h0o7yq"]
 
-[ext_resource type="Texture2D" uid="uid://fnl8bkuewcbv" path="res://item_rectorydesk.png" id="1_xm7lt"]
+[ext_resource type="Texture2D" uid="uid://fnl8bkuewcbv" path="res://itemsprites/item_rectorydesk.png" id="1_xm7lt"]
+[ext_resource type="PackedScene" uid="uid://dkcwe1dwopa71" path="res://itembox.tscn" id="2_o8yt7"]
 
 [node name="rectory desk" type="Sprite2D"]
 texture = ExtResource("1_xm7lt")
 
-[node name="area" type="Area2D" parent="."]
+[node name="area" type="StaticBody2D" parent="."]
 
 [node name="coll" type="CollisionPolygon2D" parent="area"]
-polygon = PackedVector2Array(-82, 140, 41, 140, 41, 59, 73, 58, 75, -79, -82, -80)
+polygon = PackedVector2Array(-82, 140, 41, 140, 41, 59, 73, 58, 75, -79, 40.2233, -79.2215, 41, -137, -81, -137)
+
+[node name="itembox" parent="." instance=ExtResource("2_o8yt7")]
+position = Vector2(-81, -89)
+interact_label = "the father's desk... but where's the key?"
+interact_type = "print_text"
+interact_value = "\"i lent the key to sister marion, up in the dormitory.\""
+
+[node name="coll2" parent="itembox" index="0"]
+position = Vector2(0, 89.875)
+
+[editable path="itembox"]

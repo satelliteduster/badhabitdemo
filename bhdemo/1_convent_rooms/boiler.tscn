@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgwj14tug3v6y"]
+[gd_scene load_steps=5 format=3 uid="uid://cgwj14tug3v6y"]
 
-[ext_resource type="Texture2D" uid="uid://cyqvwybvc0c86" path="res://4_boiler room.png" id="1_um8p4"]
-[ext_resource type="PackedScene" uid="uid://c4e6wqipbhbpg" path="res://basementdoor.tscn" id="2_0xx5p"]
+[ext_resource type="Texture2D" uid="uid://cyqvwybvc0c86" path="res://bgsprites/convent_1stfloor/4_boiler room.png" id="1_um8p4"]
+[ext_resource type="PackedScene" uid="uid://c4e6wqipbhbpg" path="res://1_convent_rooms/basementdoor.tscn" id="2_0xx5p"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="3_g2ccb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4bqj"]
+size = Vector2(37, 77)
 
 [node name="boiler" type="StaticBody2D"]
 
@@ -15,3 +19,17 @@ polygon = PackedVector2Array(180, -162, 182, -77, 180, 92, -67, 92, -188, 204, 3
 
 [node name="basementdoor" parent="." instance=ExtResource("2_0xx5p")]
 position = Vector2(-34, -126)
+
+[node name="hallway" type="Area2D" parent="."]
+position = Vector2(-176, 81)
+script = ExtResource("3_g2ccb")
+destination_room = "boiler_out"
+
+[node name="coll" type="CollisionShape2D" parent="hallway"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_p4bqj")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="hallway"]
+position = Vector2(63, -15)
