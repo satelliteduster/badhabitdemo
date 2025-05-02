@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cydh1jv1ga22g"]
+[gd_scene load_steps=8 format=3 uid="uid://cydh1jv1ga22g"]
 
 [ext_resource type="Texture2D" uid="uid://dsnr4sanf45oy" path="res://bgsprites/convent_3rdfloor/1_hallway3.png" id="1_ydhko"]
 [ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="2_gwpw7"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="3_76b31"]
 [ext_resource type="PackedScene" uid="uid://bdfo2ch71qngw" path="res://door.tscn" id="3_a4xn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwpw7"]
@@ -33,7 +34,7 @@ position = Vector2(-0.5, -194.5)
 script = ExtResource("2_gwpw7")
 interact_label = "it's locked."
 interact_type = "print_text"
-interact_value = "this passage leads to the belltower."
+interact_value = "you need a key to open the bell tower."
 
 [node name="coll" type="CollisionShape2D" parent="belltower"]
 position = Vector2(0, -16)
@@ -41,57 +42,82 @@ shape = SubResource("RectangleShape2D_76b31")
 
 [node name="to_bathroom" type="Area2D" parent="."]
 position = Vector2(-342, -68)
+script = ExtResource("3_76b31")
+destination_room = "bathroom_right_2"
 
 [node name="coll" type="CollisionShape2D" parent="to_bathroom"]
-position = Vector2(0, 2)
+position = Vector2(-12, 2)
 shape = SubResource("RectangleShape2D_st2ni")
 debug_color = Color(0.417816, 0.604598, 0, 0.42)
 metadata/_edit_lock_ = true
 
-[node name="to_recreational" type="Area2D" parent="."]
-position = Vector2(-337, 253)
-
-[node name="coll" type="CollisionShape2D" parent="to_recreational"]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_st2ni")
-debug_color = Color(0.417816, 0.604598, 0, 0.42)
-metadata/_edit_lock_ = true
+[node name="spawn" type="Marker2D" parent="to_bathroom"]
+position = Vector2(54, -22)
 
 [node name="to_dormitories" type="Area2D" parent="."]
 position = Vector2(-341, 91)
+script = ExtResource("3_76b31")
+destination_room = "dormitory_right"
 
 [node name="coll" type="CollisionShape2D" parent="to_dormitories"]
-position = Vector2(0, 2)
+position = Vector2(-15, 2)
 shape = SubResource("RectangleShape2D_st2ni")
 debug_color = Color(0.417816, 0.604598, 0, 0.42)
 metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="to_dormitories"]
+position = Vector2(54, -22)
+
+[node name="to_recreational" type="Area2D" parent="."]
+position = Vector2(-337, 253)
+script = ExtResource("3_76b31")
+destination_room = "recreational_right"
+
+[node name="coll" type="CollisionShape2D" parent="to_recreational"]
+position = Vector2(-17, 2)
+shape = SubResource("RectangleShape2D_st2ni")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="to_recreational"]
+position = Vector2(54, -22)
 
 [node name="to_storage" type="Area2D" parent="."]
 position = Vector2(339, -4)
+script = ExtResource("3_76b31")
+destination_room = "storage_left_2"
 
 [node name="coll" type="CollisionShape2D" parent="to_storage"]
-position = Vector2(0, 2)
+position = Vector2(19, 3)
 shape = SubResource("RectangleShape2D_st2ni")
 debug_color = Color(0.417816, 0.604598, 0, 0.42)
 metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="to_storage"]
+position = Vector2(-51, -24)
 
 [node name="to_laundry" type="Area2D" parent="."]
 position = Vector2(343, 187)
+script = ExtResource("3_76b31")
+destination_room = "laundry_left"
 
 [node name="coll" type="CollisionShape2D" parent="to_laundry"]
-position = Vector2(0, 2)
+position = Vector2(15, 4)
 shape = SubResource("RectangleShape2D_st2ni")
 debug_color = Color(0.417816, 0.604598, 0, 0.42)
 metadata/_edit_lock_ = true
 
-[node name="door" parent="." instance=ExtResource("3_a4xn3")]
+[node name="spawn" type="Marker2D" parent="to_laundry"]
+position = Vector2(-51, -24)
+
+[node name="downstairs" parent="." instance=ExtResource("3_a4xn3")]
 position = Vector2(0, -9)
 destination_room = "second_floor_up"
 
-[node name="col" parent="door" index="0"]
+[node name="col" parent="downstairs" index="0"]
 position = Vector2(0, 18)
 
-[node name="spawn" parent="door" index="1"]
+[node name="spawn" parent="downstairs" index="1"]
 position = Vector2(0, -52)
 
-[editable path="door"]
+[editable path="downstairs"]

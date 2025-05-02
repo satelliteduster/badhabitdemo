@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0slgls1l4s1x"]
+[gd_scene load_steps=4 format=3 uid="uid://b0slgls1l4s1x"]
 
 [ext_resource type="Texture2D" uid="uid://cxs31x1awhove" path="res://bgsprites/convent_3rdfloor/5_storage.png" id="1_8o3ip"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_qqa65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypld0"]
+size = Vector2(40, 58)
 
 [node name="storage" type="StaticBody2D"]
 
@@ -9,3 +13,17 @@ texture = ExtResource("1_8o3ip")
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-147, 38, -197, 38, -196, 96, -148, 95, -148, 160, 105, 158, 105, 66, 167, 65, 166, -27, 106, -27, 106, 10, 42, 9, 40, 61, -23, 61, -23, 32, -88, 33, -88, 11, -255, 11, -256, -258, 246, -256, 250, 223, -255, 222, -255, 15, -147, 15)
+
+[node name="hallway" type="Area2D" parent="."]
+position = Vector2(-187, 64)
+script = ExtResource("2_qqa65")
+destination_room = "storage_out_2"
+
+[node name="coll" type="CollisionShape2D" parent="hallway"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ypld0")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="hallway"]
+position = Vector2(54, -22)

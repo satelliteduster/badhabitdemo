@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b6tktttggsejv"]
+[gd_scene load_steps=24 format=3 uid="uid://b6tktttggsejv"]
 
 [ext_resource type="Script" uid="uid://pb0ctvx6haij" path="res://scripts/barbara.gd" id="1_cbiav"]
 [ext_resource type="Texture2D" uid="uid://cjhy0t53hd3j0" path="res://barbarasprites/forward/barbfw-0.png" id="2_gmc5i"]
@@ -116,8 +116,12 @@ size = Vector2(20, 7.72057)
 [sub_resource type="CircleShape2D" id="CircleShape2D_sgm8p"]
 radius = 185.024
 
+[sub_resource type="LabelSettings" id="LabelSettings_56k6a"]
+font_size = 75
+
 [sub_resource type="LabelSettings" id="LabelSettings_sgm8p"]
 font_size = 75
+font_color = Color(1, 1, 0.258824, 1)
 
 [node name="barbara" type="CharacterBody2D"]
 light_mask = 3
@@ -144,7 +148,7 @@ offset_left = -73.5294
 offset_top = 91.1765
 offset_right = 76.4706
 offset_bottom = 191.176
-color = Color(0, 0, 0, 0.372549)
+color = Color(0, 0, 0, 0.286275)
 
 [node name="interaction" type="Node2D" parent="."]
 
@@ -166,17 +170,19 @@ offset_bottom = 429.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "test"
-label_settings = SubResource("LabelSettings_sgm8p")
+label_settings = SubResource("LabelSettings_56k6a")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="textbox" type="ColorRect" parent="interaction/text"]
+z_index = -1
 layout_mode = 0
 offset_left = 52.0
 offset_right = 1202.0
 offset_bottom = 107.0
 color = Color(0.219608, 0, 0.537255, 0.270588)
+metadata/_edit_lock_ = true
 
 [node name="response" type="Label" parent="interaction"]
 z_index = 1
@@ -193,6 +199,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="textbox" type="ColorRect" parent="interaction/response"]
+z_index = -1
 layout_mode = 0
 offset_left = 52.0
 offset_right = 1202.0

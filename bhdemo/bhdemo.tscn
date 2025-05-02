@@ -10,7 +10,7 @@ script = ExtResource("1_nccpt")
 
 [node name="barbara" parent="." instance=ExtResource("1_qasne")]
 z_index = 1
-position = Vector2(2996, 948)
+position = Vector2(32.0001, -5172)
 scale = Vector2(0.34, 0.34)
 
 [node name="AnimatedSprite2D" parent="barbara" index="0"]
@@ -57,6 +57,7 @@ metadata/_edit_lock_ = true
 position = Vector2(3000, 0)
 
 [node name="convent" parent="currentscene" instance=ExtResource("3_g4gj3")]
+z_index = -1
 position = Vector2(37, -28)
 
 [editable path="barbara"]

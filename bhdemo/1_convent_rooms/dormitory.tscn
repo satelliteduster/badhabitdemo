@@ -1,11 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg7e8peenb811"]
+[gd_scene load_steps=5 format=3 uid="uid://bg7e8peenb811"]
 
+[ext_resource type="PackedScene" uid="uid://dkcwe1dwopa71" path="res://itembox.tscn" id="1_78v68"]
 [ext_resource type="Texture2D" uid="uid://buk7jpj0wc0se" path="res://bgsprites/convent_3rdfloor/3_dormitories.png" id="1_xiylk"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="3_qgobi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajqas"]
+size = Vector2(40, 58)
 
 [node name="dormitory" type="StaticBody2D"]
 
+[node name="dresser" parent="." instance=ExtResource("1_78v68")]
+z_index = 1
+position = Vector2(16, -212)
+interact_label = "a note on the dresser?"
+interact_type = "print_text"
+interact_value = "\"thank you for the key, father. i returned it to the rectory closet.\""
+
 [node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_xiylk")
+metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="walls" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(62, 38, 166, 38, 165, 94, 64, 94, 62, 347, -35, 347, -35, 271, -142, 271, -143, 225, -34, 225, -34, 143, -140, 144, -139, 93, -35, 94, -35, 12, -137, 12, -136, -31, -33, -31, -32, -115, -141, -115, -139, -163, -30, -164, -31, -194, 232, -194, 233, -441, -238, -446, -236, 412, 236, 411, 233, -188, 63, -189)
+metadata/_edit_lock_ = true
+
+[node name="hallway" type="Area2D" parent="."]
+position = Vector2(118, 64)
+script = ExtResource("3_qgobi")
+destination_room = "dormitory_out"
+
+[node name="coll" type="CollisionShape2D" parent="hallway"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ajqas")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="hallway"]
+position = Vector2(-57, -23)

@@ -60,10 +60,25 @@ const SPAWN_POINTS := {
 	
 	#convent [third floor]
 	#"name":{"position": Vector2(0,0), "direction": "dir"}
-	"third_floor_down":{"position": Vector2(37,-5107), "direction": "up"}
+	"third_floor_down":{"position": Vector2(37,-5107), "direction": "up"},
+	
+	"bathroom_out_2":{"position": Vector2(-338,-5145), "direction": "right"},
+	"bathroom_right_2":{"position": Vector2(-1026,-5434), "direction": "left"},
+	
+	"dormitory_out":{"position": Vector2(-336,-4938), "direction": "right"},
+	"dormitory_right":{"position": Vector2(-1834,-4974), "direction": "left"},
+	
+	"recreational_out":{"position": Vector2(-331, -4727), "direction": "right"},
+	"recreational_right":{"position": Vector2(-1024,-4523), "direction": "left"},
+	
+	"storage_out_2":{"position": Vector2(411,-5064), "direction": "left"},
+	"storage_left_2":{"position": Vector2(1100, -5428), "direction": "right"},
+	
+	"laundry_out":{"position": Vector2(416,-4816), "direction": "left"},
+	"laundry_left":{"position": Vector2(1100,-4520), "direction": "right"}
 	
 	#convent [basement]
-	
+	#"name":{"position": Vector2(0,0), "direction": "dir"}
 }
 
 signal on_trigger_player_spawn(position: Vector2, direction: String)
