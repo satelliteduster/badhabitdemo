@@ -17,6 +17,7 @@ metadata/_edit_lock_ = true
 
 [node name="upstairs" parent="." instance=ExtResource("2_if4va")]
 position = Vector2(-5, -235)
+destination_room = "second_floor_down"
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
 position = Vector2(-3, 0)

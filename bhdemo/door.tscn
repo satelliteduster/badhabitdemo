@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="1_ba8gm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cucyr"]
-size = Vector2(100, 45)
+size = Vector2(84, 45)
 
 [node name="door" type="Area2D"]
 z_index = 2

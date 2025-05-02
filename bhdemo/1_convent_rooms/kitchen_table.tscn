@@ -14,7 +14,7 @@ polygon = PackedVector2Array(-42, 140, -1, 116, -1, 79, 16, 81, 63, 52, 64, 27, 
 [node name="bible" parent="." instance=ExtResource("2_puao0")]
 interact_label = "... a bible?"
 interact_type = "print_text"
-interact_value = "and god said, \"uhh idk lmao\""
+interact_value = "and god said, \"go upstairs and pray, my child.\""
 
 [node name="coll2" parent="bible" index="0"]
 light_mask = 2

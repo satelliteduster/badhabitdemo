@@ -9,11 +9,11 @@ size = Vector2(37, 77)
 
 [node name="boiler" type="StaticBody2D"]
 
-[node name="4BoilerRoom" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
 texture = ExtResource("1_um8p4")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="walls" type="CollisionPolygon2D" parent="."]
 position = Vector2(-88, 114)
 polygon = PackedVector2Array(180, -162, 182, -77, 180, 92, -67, 92, -188, 204, 325, 205, 330, -384, -188, -384, -188, 199, -67, 88, -67, 9, -108, 7, -110, -73, -68, -73, -69.5681, -161, 12, -161, 11, -320, 98, -323, 97, -161)
 

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://u4oslw7cq8he"]
+[gd_scene load_steps=4 format=3 uid="uid://u4oslw7cq8he"]
 
 [ext_resource type="Texture2D" uid="uid://buoiomm1hjbhp" path="res://bgsprites/convent_2ndfloor/5_bathroom.png" id="1_fed4x"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_wv33k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shipr"]
+size = Vector2(40, 58)
 
 [node name="bathroom" type="StaticBody2D"]
 
@@ -9,3 +13,17 @@ texture = ExtResource("1_fed4x")
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(51, 29, 94, 29, 96, 99, 53, 99, 54, 125, -73, 127, -74, 0, -4, 0, -1, 22, 4, 32, 5, 45, 14, 55, 31, 54, 38, 43, 38, 32, 44, 22, 47, 0, 47, -190, -126, -191, -126, 167, 150, 165, 150, -190, 51, -191)
+
+[node name="to_bathroom" type="Area2D" parent="."]
+position = Vector2(96, 62)
+script = ExtResource("2_wv33k")
+destination_room = "bathroom_out"
+
+[node name="coll" type="CollisionShape2D" parent="to_bathroom"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_shipr")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="to_bathroom"]
+position = Vector2(-55, 1)

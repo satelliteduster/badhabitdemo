@@ -1,16 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd2rthrbcuq0t"]
 
-[ext_resource type="PackedScene" uid="uid://cutht4iaj60is" path="res://fakebasement.tscn" id="1_g1xpe"]
-[ext_resource type="PackedScene" uid="uid://be0hihldfswhp" path="res://realbasement.tscn" id="2_q2tl6"]
-[ext_resource type="PackedScene" uid="uid://cbkiohpmlscq6" path="res://exit.tscn" id="3_q2tl6"]
+[ext_resource type="PackedScene" uid="uid://cutht4iaj60is" path="res://2_basement_rooms/fakebasement.tscn" id="1_g1xpe"]
+[ext_resource type="PackedScene" uid="uid://be0hihldfswhp" path="res://2_basement_rooms/realbasement.tscn" id="2_q2tl6"]
+[ext_resource type="PackedScene" uid="uid://cbkiohpmlscq6" path="res://2_basement_rooms/exit.tscn" id="3_q2tl6"]
 
 [node name="basement" type="Node2D"]
 
 [node name="fakebasement" parent="." instance=ExtResource("1_g1xpe")]
-visible = false
 
 [node name="realbasement" parent="." instance=ExtResource("2_q2tl6")]
-process_mode = 4
+position = Vector2(1200, 0)
 
 [node name="exit" parent="." instance=ExtResource("3_q2tl6")]
-process_mode = 4
+position = Vector2(1152, 648)

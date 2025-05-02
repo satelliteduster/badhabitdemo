@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnmhsvjt5y7gq"]
+[gd_scene load_steps=5 format=3 uid="uid://cnmhsvjt5y7gq"]
 
-[ext_resource type="PackedScene" uid="uid://0qsyvtismthn" path="res://closet2.tscn" id="1_v7cqa"]
+[ext_resource type="PackedScene" uid="uid://0qsyvtismthn" path="res://1_convent_rooms/closet2.tscn" id="1_v7cqa"]
 [ext_resource type="Texture2D" uid="uid://6qp4uxcu5rhb" path="res://bgsprites/convent_2ndfloor/2_storage.png" id="2_lpf1o"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="3_ebqsb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6unh7"]
+size = Vector2(40, 58)
 
 [node name="storage room" type="StaticBody2D"]
 
@@ -13,3 +17,31 @@ position = Vector2(-750, 0)
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(201, 0, 201, -216, -207, -216, -205, 186, 203, 186, 201, 3, 92, 3, 92, 38, 133, 38, 133, 92, 97, 92, 97, 125, -94, 125, -94, 87, -133, 87, -133, 36, -95, 36, -95.237, -1.20815)
+
+[node name="to_storage" type="Area2D" parent="."]
+position = Vector2(-131, 60)
+script = ExtResource("3_ebqsb")
+destination_room = "storage_closet_right"
+
+[node name="coll" type="CollisionShape2D" parent="to_storage"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_6unh7")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="to_storage"]
+position = Vector2(56, -25)
+
+[node name="to_storage2" type="Area2D" parent="."]
+position = Vector2(133, 63)
+script = ExtResource("3_ebqsb")
+destination_room = "storage_room_out"
+
+[node name="coll" type="CollisionShape2D" parent="to_storage2"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_6unh7")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="to_storage2"]
+position = Vector2(-64, -29)

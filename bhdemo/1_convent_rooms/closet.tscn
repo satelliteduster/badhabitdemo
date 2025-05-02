@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://7rhj0athn02i"]
+[gd_scene load_steps=5 format=3 uid="uid://7rhj0athn02i"]
 
 [ext_resource type="Texture2D" uid="uid://nt6l7jkck3xx" path="res://bgsprites/convent_1stfloor/6_closet.png" id="1_48ji0"]
 [ext_resource type="PackedScene" uid="uid://c6eiouwhimtlj" path="res://1_convent_rooms/basement_key.tscn" id="2_bewde"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="3_pnbe5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bewde"]
 size = Vector2(36.75, 77)
@@ -12,8 +13,7 @@ size = Vector2(36.75, 77)
 texture = ExtResource("1_48ji0")
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(45, 0, 96, -196, 95, 223, -99, 223, -98, -196, 93, -196, 41, 0, -40, 0, -41, 203, 45, 203)
+polygon = PackedVector2Array(45, 21, 96, -196, 95, 223, -99, 223, -98, -196, 93, -196, 45, 12, -43, 12, -43, 214, 45, 213)
 
 [node name="basement key" parent="." instance=ExtResource("2_bewde")]
 position = Vector2(3, -50)
@@ -21,8 +21,13 @@ position = Vector2(3, -50)
 [node name="to_rectory" type="Area2D" parent="."]
 position = Vector2(3, 205)
 rotation = 1.5708
+script = ExtResource("3_pnbe5")
+destination_room = "rectory_up"
 
 [node name="coll" type="CollisionShape2D" parent="to_rectory"]
-position = Vector2(-22, 2.00008)
+position = Vector2(-15, 3.00005)
 shape = SubResource("RectangleShape2D_bewde")
 debug_color = Color(0.432011, 0.601005, 0, 0.42)
+
+[node name="spawn" type="Marker2D" parent="to_rectory"]
+position = Vector2(-114, 3.00041)

@@ -41,8 +41,13 @@ position = Vector2(80, -22)
 [node name="to_closet" type="Area2D" parent="."]
 position = Vector2(-127, -190.188)
 rotation = 1.5708
+script = ExtResource("4_677dl")
+destination_room = "closet"
 
 [node name="coll" type="CollisionShape2D" parent="to_closet"]
 position = Vector2(-33.8125, -263)
 shape = SubResource("RectangleShape2D_37tha")
 debug_color = Color(0.432011, 0.601005, 0, 0.42)
+
+[node name="spawn" type="Marker2D" parent="to_closet"]
+position = Vector2(65.1871, -262)

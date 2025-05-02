@@ -6,12 +6,16 @@ class_name Player
 @onready var walking = $AnimatedSprite2D
 
 @onready var interactions = []
+@onready var interaction = $interaction
 @onready var interactlabel = $interaction/text
+
+@onready var interactresponse = $interaction/response
 
 var lastdir = "down"
 
 func _ready():
 	SceneManager.on_trigger_player_spawn.connect(_on_spawn)
+	interaction.hide()
 	_update_interactions()
 	pass
 
@@ -57,11 +61,16 @@ func _physics_process(_delta):
 
 func _on_int_area_area_entered(area: Area2D) -> void:
 	if area is Interactive:
+		interaction.show()
+		interactresponse.hide()
 		interactions.insert(0, area)
 		_update_interactions()
 
 func _on_int_area_area_exited(area: Area2D) -> void:
 	if area is Interactive:
+		interaction.hide()
+		if interactresponse:
+			interactresponse.hide()
 		interactions.erase(area)
 		_update_interactions()
 
@@ -75,6 +84,11 @@ func execute_interactions():
 	if interactions:
 		var current_int = interactions[0]
 		match current_int.interact_type:
-			"print_text" : print(current_int.interact_value)
-			#"collectible" : 
-			#"usable": 
+			"print_text" : 
+				interactresponse.show()
+				interactresponse.text = current_int.interact_value
+				print(current_int.interact_value)
+			"collectible" : 
+				#get_parent().current_int.hide()
+				#InventoryManager._add_to_inventory(current_int)
+				print(current_int.interact_value)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b6tktttggsejv"]
+[gd_scene load_steps=23 format=3 uid="uid://b6tktttggsejv"]
 
 [ext_resource type="Script" uid="uid://pb0ctvx6haij" path="res://scripts/barbara.gd" id="1_cbiav"]
 [ext_resource type="Texture2D" uid="uid://cjhy0t53hd3j0" path="res://barbarasprites/forward/barbfw-0.png" id="2_gmc5i"]
@@ -17,21 +17,22 @@
 [ext_resource type="Texture2D" uid="uid://bdmj7ip4wjsbs" path="res://barbarasprites/backward/barbbw-2.png" id="15_eg1ms"]
 [ext_resource type="Texture2D" uid="uid://cxj2mnyextmf2" path="res://barbarasprites/backward/barbbw-3.png" id="16_3s023"]
 [ext_resource type="Texture2D" uid="uid://dofku441hcir8" path="res://barbarasprites/idle/barbbw idle.png" id="17_uqve4"]
+[ext_resource type="PackedScene" uid="uid://bs53usjcnkgyw" path="res://inventory.tscn" id="18_56k6a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j7h5h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_gmc5i")
-}, {
-"duration": 1.0,
 "texture": ExtResource("3_c8eac")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_5rpch")
+"texture": ExtResource("2_gmc5i")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_lmuek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5rpch")
 }],
 "loop": true,
 "name": &"down",
@@ -47,10 +48,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_cr51u")
+"texture": ExtResource("8_hpodc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_hpodc")
+"texture": ExtResource("7_cr51u")
 }],
 "loop": true,
 "name": &"left",
@@ -66,10 +67,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_j0g4f")
+"texture": ExtResource("11_4x16h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_4x16h")
+"texture": ExtResource("10_j0g4f")
 }],
 "loop": true,
 "name": &"right",
@@ -85,9 +86,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_8eo7d")
-}, {
-"duration": 1.0,
 "texture": ExtResource("14_pvk8a")
 }, {
 "duration": 1.0,
@@ -95,6 +93,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("16_3s023")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8eo7d")
 }],
 "loop": true,
 "name": &"up",
@@ -127,7 +128,7 @@ script = ExtResource("1_cbiav")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j7h5h")
 animation = &"downidle"
-frame_progress = 0.338165
+frame_progress = 0.215202
 
 [node name="coll" type="CollisionShape2D" parent="."]
 position = Vector2(0, 102.941)
@@ -176,6 +177,32 @@ offset_left = 52.0
 offset_right = 1202.0
 offset_bottom = 107.0
 color = Color(0.219608, 0, 0.537255, 0.270588)
+
+[node name="response" type="Label" parent="interaction"]
+z_index = 1
+offset_left = -626.0
+offset_top = -430.0
+offset_right = 624.0
+offset_bottom = -327.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "test"
+label_settings = SubResource("LabelSettings_sgm8p")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="textbox" type="ColorRect" parent="interaction/response"]
+layout_mode = 0
+offset_left = 52.0
+offset_right = 1202.0
+offset_bottom = 107.0
+color = Color(0.219608, 0, 0.537255, 0.270588)
+metadata/_edit_lock_ = true
+
+[node name="inventory" parent="." instance=ExtResource("18_56k6a")]
+process_mode = 4
+position = Vector2(-577, -324)
 
 [connection signal="area_entered" from="interaction/int_area" to="." method="_on_int_area_area_entered"]
 [connection signal="area_exited" from="interaction/int_area" to="." method="_on_int_area_area_exited"]

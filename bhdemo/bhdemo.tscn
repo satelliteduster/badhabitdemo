@@ -10,7 +10,7 @@ script = ExtResource("1_nccpt")
 
 [node name="barbara" parent="." instance=ExtResource("1_qasne")]
 z_index = 1
-position = Vector2(1320, 107)
+position = Vector2(2996, 948)
 scale = Vector2(0.34, 0.34)
 
 [node name="AnimatedSprite2D" parent="barbara" index="0"]
@@ -32,7 +32,6 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="coll2" parent="barbara/interaction/int_area" index="0"]
-debug_color = Color(0.364706, 0.615686, 0, 0.137255)
 metadata/_edit_lock_ = true
 
 [node name="text" parent="barbara/interaction" index="1"]
@@ -40,8 +39,15 @@ offset_top = 752.941
 offset_bottom = 855.941
 metadata/_edit_lock_ = true
 
-[node name="textbox" parent="barbara/interaction/text" index="0"]
-color = Color(0.219608, 0, 0.537255, 0.270588)
+[node name="response" parent="barbara/interaction" index="2"]
+offset_left = -1626.47
+offset_top = -888.235
+offset_right = -376.471
+offset_bottom = -785.235
+metadata/_edit_lock_ = true
+
+[node name="inventory" parent="barbara" index="5"]
+position = Vector2(-1647.06, -902.941)
 
 [node name="currentscene" type="Node2D" parent="."]
 metadata/_edit_group_ = true

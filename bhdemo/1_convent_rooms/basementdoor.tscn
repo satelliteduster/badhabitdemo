@@ -1,15 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4e6wqipbhbpg"]
+[gd_scene load_steps=5 format=3 uid="uid://c4e6wqipbhbpg"]
 
-[ext_resource type="Texture2D" uid="uid://c8ehu8jrqh8tr" path="res://item_basementdoor.png" id="1_yeiqu"]
+[ext_resource type="Texture2D" uid="uid://c8ehu8jrqh8tr" path="res://itemsprites/item_basementdoor.png" id="1_yeiqu"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_a2qqo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeiqu"]
 size = Vector2(77, 157)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8f88"]
+size = Vector2(77, 118)
+
+[node name="basement door" type="StaticBody2D"]
 
 [node name="basementdoor" type="Sprite2D" parent="."]
 texture = ExtResource("1_yeiqu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="block" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_yeiqu")
+
+[node name="to_basement" type="Area2D" parent="."]
+script = ExtResource("2_a2qqo")
+destination_room = "fake_basement"
+
+[node name="coll" type="CollisionShape2D" parent="to_basement"]
+position = Vector2(-0.5, -20)
+shape = SubResource("RectangleShape2D_q8f88")
+debug_color = Color(0.216123, 0.639415, 5.77569e-07, 0.42)
+
+[node name="spawn" type="Marker2D" parent="to_basement"]
+position = Vector2(0, 116)

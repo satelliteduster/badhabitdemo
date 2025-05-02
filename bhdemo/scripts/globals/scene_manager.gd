@@ -1,8 +1,8 @@
 extends Node
 
-#const MAIN_SCENE := preload("res://0_properchurch_rooms/properchurch.tscn")
-
 const SPAWN_POINTS := {
+	#properchurch
+	#"name":{"position": Vector2(0,0), "direction": "dir"}
 	"exterior": {"position": Vector2(3000, 919), "direction": "down"},
 	
 	"narthex_down": {"position": Vector2(2996, -1472),"direction": "up"},
@@ -17,19 +17,53 @@ const SPAWN_POINTS := {
 	"atrium_up_left": {"position": Vector2(2818,-4777), "direction": "down"},
 	"atrium_up_right": {"position": Vector2(3189, -4775), "direction": "down"},
 	
+	#convent [first floor]
 	"first_floor_left": {"position": Vector2(-177,-109), "direction": "up"},
 	"first_floor_right": {"position": Vector2(242,-107), "direction": "up"},
+	"first_floor_up": {"position": Vector2(32,-197), "direction": "up"},
 	
 	"kitchen_out": {"position": Vector2(-362, 80), "direction": "left"},
 	"kitchen_right": {"position": Vector2(-1180, 78), "direction": "right"},
 	"kitchen_up": {"position": Vector2(-1495, -110), "direction": "left"},
+	
 	"pantry_down": {"position": Vector2(-1490, -705), "direction": "right"},
 	
 	"boiler_out": {"position": Vector2(429, -128), "direction": "right"},
 	"boiler_left": {"position": Vector2(-76, -1062), "direction": "left"},
 	
 	"rectory_out": {"position": Vector2(431, 203), "direction": "left"},
-	"rectory_left": {"position": Vector2(1267, 211), "direction": "right"}
+	"rectory_left": {"position": Vector2(1267, 211), "direction": "right"},
+	"rectory_up": {"position": Vector2(1572,-56), "direction": "down"},
+	
+	"closet":{"position": Vector2(1572,-741), "direction": "up"},
+	#convent [second floor]
+	#"name":{"position": Vector2(0,0), "direction": "dir"}
+	"second_floor_down":{"position": Vector2(36,-2610), "direction": "dir"},
+	"second_floor_up":{"position": Vector2(36,-2696), "direction": "down"},
+	
+	"bathroom_out":{"position": Vector2(-337,-2645), "direction": "right"},
+	"bathroom_right":{"position": Vector2(-950,-3746), "direction": "left"},
+	
+	"prayer_room_out":{"position": Vector2(-338,-2436), "direction": "right"},
+	"prayer_room_right":{"position": Vector2(-1086,-2919), "direction": "left"},
+	
+	"storage_room_out":{"position": Vector2(-337,-2229), "direction": "right"},
+	"storage_room_right":{"position": Vector2(-1173,-2224), "direction": "left"},
+	"storage_room_left":{"position": Vector2(-1360,-2223), "direction": "right"},
+	"storage_closet_right":{"position": Vector2(-2203,-2220), "direction": "left"},
+	
+	"vestry_out":{"position": Vector2(413,-2560), "direction": "left"},
+	"vestry_left":{"position": Vector2(1175,-3004), "direction": "right"},
+	
+	"sacristy_out":{"position": Vector2(413,-2316), "direction": "left"},
+	"sacristy_left":{"position": Vector2(1175,-2224), "direction": "right"},
+	
+	#convent [third floor]
+	#"name":{"position": Vector2(0,0), "direction": "dir"}
+	"third_floor_down":{"position": Vector2(37,-5107), "direction": "up"}
+	
+	#convent [basement]
+	
 }
 
 signal on_trigger_player_spawn(position: Vector2, direction: String)

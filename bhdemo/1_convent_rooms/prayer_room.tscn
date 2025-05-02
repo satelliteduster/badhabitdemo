@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx3812hg3pnax"]
+[gd_scene load_steps=4 format=3 uid="uid://cx3812hg3pnax"]
 
 [ext_resource type="Texture2D" uid="uid://jmvwho35e3j5" path="res://bgsprites/convent_2ndfloor/4_prayer_room.png" id="1_m6a5l"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_vvx3x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75rga"]
+size = Vector2(40, 58)
 
 [node name="prayer room" type="StaticBody2D"]
 
@@ -9,3 +13,17 @@ texture = ExtResource("1_m6a5l")
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-8, 62, -8, -32, -70, -32, -70, -6, -106, -6, -106, -33, -165, -33, -167, 188, 154, 187, 154, 160, 192, 160, 191, 98, 151, 98, 151, 64, 236, 64, 239, 227, -203, 228, -204, -224, 40, -224, 40, -102, 235, -100, 236, 62)
+
+[node name="hallway" type="Area2D" parent="."]
+position = Vector2(188, 127)
+script = ExtResource("2_vvx3x")
+destination_room = "prayer_room_out"
+
+[node name="coll" type="CollisionShape2D" parent="hallway"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_75rga")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="hallway"]
+position = Vector2(-52, -28)

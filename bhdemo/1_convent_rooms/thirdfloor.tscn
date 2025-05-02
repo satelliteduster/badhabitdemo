@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://be77w3lsv0158"]
 
-[ext_resource type="PackedScene" uid="uid://cydh1jv1ga22g" path="res://hallway_3.tscn" id="1_snba2"]
-[ext_resource type="PackedScene" uid="uid://b0slgls1l4s1x" path="res://storage2.tscn" id="2_rshwc"]
-[ext_resource type="PackedScene" uid="uid://bg7e8peenb811" path="res://dormitory.tscn" id="3_j2kvx"]
-[ext_resource type="PackedScene" uid="uid://da8xw2se4n7wu" path="res://bathroom2.tscn" id="3_rshwc"]
-[ext_resource type="PackedScene" uid="uid://cbuel2t6dtu3h" path="res://recreational.tscn" id="5_st3te"]
-[ext_resource type="PackedScene" uid="uid://nso1rf10qfqm" path="res://laundry.tscn" id="6_f37ub"]
+[ext_resource type="PackedScene" uid="uid://cydh1jv1ga22g" path="res://1_convent_rooms/hallway_3.tscn" id="1_snba2"]
+[ext_resource type="PackedScene" uid="uid://b0slgls1l4s1x" path="res://1_convent_rooms/storage2.tscn" id="2_rshwc"]
+[ext_resource type="PackedScene" uid="uid://bg7e8peenb811" path="res://1_convent_rooms/dormitory.tscn" id="3_j2kvx"]
+[ext_resource type="PackedScene" uid="uid://da8xw2se4n7wu" path="res://1_convent_rooms/bathroom2.tscn" id="3_rshwc"]
+[ext_resource type="PackedScene" uid="uid://cbuel2t6dtu3h" path="res://1_convent_rooms/recreational.tscn" id="5_st3te"]
+[ext_resource type="PackedScene" uid="uid://nso1rf10qfqm" path="res://1_convent_rooms/laundry.tscn" id="6_f37ub"]
 
 [node name="thirdfloor" type="Node2D"]
 

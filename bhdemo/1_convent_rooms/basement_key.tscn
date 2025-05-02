@@ -8,7 +8,7 @@ texture = ExtResource("1_oddt5")
 
 [node name="itembox" parent="." instance=ExtResource("2_4gcoy")]
 interact_label = "there it is..."
-interact_type = "usable"
+interact_type = "collectible"
 interact_value = "you collected a key!"
 
 [node name="coll2" parent="itembox" index="0"]

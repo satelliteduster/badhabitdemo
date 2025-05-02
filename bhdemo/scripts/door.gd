@@ -10,5 +10,5 @@ func _ready():
 
 func _on_door_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		print("awawa")
+		#print("awawa")
 		SceneManager.go_to_area(destination_room)

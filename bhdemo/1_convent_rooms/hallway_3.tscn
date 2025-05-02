@@ -1,9 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cydh1jv1ga22g"]
+[gd_scene load_steps=7 format=3 uid="uid://cydh1jv1ga22g"]
 
 [ext_resource type="Texture2D" uid="uid://dsnr4sanf45oy" path="res://bgsprites/convent_3rdfloor/1_hallway3.png" id="1_ydhko"]
+[ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="2_gwpw7"]
+[ext_resource type="PackedScene" uid="uid://bdfo2ch71qngw" path="res://door.tscn" id="3_a4xn3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydhko"]
-size = Vector2(69, 129)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwpw7"]
+size = Vector2(67, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76b31"]
+size = Vector2(69, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_st2ni"]
 size = Vector2(40, 58)
@@ -16,11 +21,23 @@ texture = ExtResource("1_ydhko")
 [node name="walls" type="CollisionPolygon2D" parent="."]
 position = Vector2(2, -1)
 scale = Vector2(0.76, 0.76)
-polygon = PackedVector2Array(419, -369, 536, -495, 534, 468, -530, 474, -530, -500, 535, -497, 417, -371, 417, -168, 46, -168, 44.7368, -342.105, -51.3158, -342.105, -51, -168, -417, -168, -421.053, -125, -476.316, -125, -476.316, -46.0526, -417.105, -46.0526, -415.789, 85.5263, -477.27, 84.9164, -477.632, 164.474, -420, 164, -419.737, 297.368, -475, 297.368, -476.316, 378.947, -291, 379, -291, -42, -46.0526, -42.1053, -44.7368, -17.1053, 46.0526, -17.1053, 47.3684, -42.1053, 295, -43, 294, 382, 418, 382, 418, 298, 480, 298, 480, 205, 417, 205, 415.789, 42.1053, 472.368, 42.1053, 472.368, -44.7368, 417.105, -43.4211)
+polygon = PackedVector2Array(419, -369, 536, -495, 534, 468, -530, 474, -530, -500, 535, -497, 417, -371, 417, -168, 46, -168, 44.7368, -342.105, -51.3158, -342.105, -51, -168, -417, -168, -421.053, -125, -476.316, -125, -476.316, -46.0526, -417.105, -46.0526, -415.789, 85.5263, -477.27, 84.9164, -477.632, 164.474, -420, 164, -419.737, 297.368, -475, 297.368, -476.316, 378.947, -291, 379, -291, -42, -47.3684, -42.1053, -47.3684, 1.31579, 47.3684, 1.31579, 47.3684, -42.1053, 295, -43, 294, 382, 418, 382, 418, 298, 480, 298, 480, 205, 417, 205, 415.789, 42.1053, 472.368, 42.1053, 472.368, -44.7368, 417.105, -43.4211)
 
-[node name="belltower" type="CollisionShape2D" parent="."]
+[node name="block" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -193.5)
+shape = SubResource("RectangleShape2D_gwpw7")
+debug_color = Color(3.1285e-07, 0.650081, 0.11335, 0.42)
+
+[node name="belltower" type="Area2D" parent="."]
 position = Vector2(-0.5, -194.5)
-shape = SubResource("RectangleShape2D_ydhko")
+script = ExtResource("2_gwpw7")
+interact_label = "it's locked."
+interact_type = "print_text"
+interact_value = "this passage leads to the belltower."
+
+[node name="coll" type="CollisionShape2D" parent="belltower"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_76b31")
 
 [node name="to_bathroom" type="Area2D" parent="."]
 position = Vector2(-342, -68)
@@ -66,3 +83,15 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_st2ni")
 debug_color = Color(0.417816, 0.604598, 0, 0.42)
 metadata/_edit_lock_ = true
+
+[node name="door" parent="." instance=ExtResource("3_a4xn3")]
+position = Vector2(0, -9)
+destination_room = "second_floor_up"
+
+[node name="col" parent="door" index="0"]
+position = Vector2(0, 18)
+
+[node name="spawn" parent="door" index="1"]
+position = Vector2(0, -52)
+
+[editable path="door"]

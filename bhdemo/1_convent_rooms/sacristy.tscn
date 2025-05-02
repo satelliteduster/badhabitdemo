@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://w1bkvwqc53q0"]
+[gd_scene load_steps=4 format=3 uid="uid://w1bkvwqc53q0"]
 
 [ext_resource type="Texture2D" uid="uid://dv3hqhomp26us" path="res://bgsprites/convent_2ndfloor/7_sacristy[down].png" id="1_htmfo"]
+[ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_65bjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7am1a"]
+size = Vector2(40, 58)
 
 [node name="sacristy" type="StaticBody2D"]
 
@@ -9,3 +13,17 @@ texture = ExtResource("1_htmfo")
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-150, -31, -52, -31, -52, 66, 75, 67, 75, -29, 263, -27, 259, -241, -239, -243, -237, 215, 266, 215, 263, -25, 168, -25, 169, 157, -149, 157, -149, 95, -191, 94, -191, 34, -150, 34)
+
+[node name="to_sacristy" type="Area2D" parent="."]
+position = Vector2(-191, 62)
+script = ExtResource("2_65bjn")
+destination_room = "sacristy_out"
+
+[node name="coll" type="CollisionShape2D" parent="to_sacristy"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_7am1a")
+debug_color = Color(0.417816, 0.604598, 0, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="spawn" type="Marker2D" parent="to_sacristy"]
+position = Vector2(67, -28)
