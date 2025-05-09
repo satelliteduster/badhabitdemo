@@ -111,17 +111,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n74ex"]
-size = Vector2(20, 7.72057)
+size = Vector2(10.439, 7.72057)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sgm8p"]
-radius = 185.024
+radius = 129.757
 
 [sub_resource type="LabelSettings" id="LabelSettings_56k6a"]
-font_size = 75
+font_size = 50
 
-[sub_resource type="LabelSettings" id="LabelSettings_sgm8p"]
-font_size = 75
-font_color = Color(1, 1, 0.258824, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_8p3va"]
+font_size = 50
+font_color = Color(1, 1, 0, 1)
 
 [node name="barbara" type="CharacterBody2D"]
 light_mask = 3
@@ -135,7 +135,7 @@ animation = &"downidle"
 frame_progress = 0.215202
 
 [node name="coll" type="CollisionShape2D" parent="."]
-position = Vector2(0, 102.941)
+position = Vector2(1.5, 102.941)
 scale = Vector2(10.25, 16)
 shape = SubResource("RectangleShape2D_n74ex")
 one_way_collision_margin = 10.0
@@ -179,7 +179,7 @@ metadata/_edit_use_anchors_ = true
 z_index = -1
 layout_mode = 0
 offset_left = 52.0
-offset_right = 1202.0
+offset_right = 1167.0
 offset_bottom = 107.0
 color = Color(0.219608, 0, 0.537255, 0.270588)
 metadata/_edit_lock_ = true
@@ -193,19 +193,11 @@ offset_bottom = -327.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "test"
-label_settings = SubResource("LabelSettings_sgm8p")
+label_settings = SubResource("LabelSettings_8p3va")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="textbox" type="ColorRect" parent="interaction/response"]
-z_index = -1
-layout_mode = 0
-offset_left = 52.0
-offset_right = 1202.0
-offset_bottom = 107.0
-color = Color(0.219608, 0, 0.537255, 0.270588)
-metadata/_edit_lock_ = true
 
 [node name="inventory" parent="." instance=ExtResource("18_56k6a")]
 process_mode = 4

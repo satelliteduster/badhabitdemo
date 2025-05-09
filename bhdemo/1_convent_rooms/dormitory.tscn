@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg7e8peenb811"]
+[gd_scene load_steps=6 format=3 uid="uid://bg7e8peenb811"]
 
 [ext_resource type="PackedScene" uid="uid://dkcwe1dwopa71" path="res://itembox.tscn" id="1_78v68"]
 [ext_resource type="Texture2D" uid="uid://buk7jpj0wc0se" path="res://bgsprites/convent_3rdfloor/3_dormitories.png" id="1_xiylk"]
 [ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="3_qgobi"]
+[ext_resource type="PackedScene" uid="uid://bgv5a8uchfbaf" path="res://cross.tscn" id="4_qgobi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajqas"]
 size = Vector2(40, 58)
@@ -14,7 +15,7 @@ z_index = 1
 position = Vector2(16, -212)
 interact_label = "a note on the dresser?"
 interact_type = "print_text"
-interact_value = "\"thank you for the key, father. i returned it to the rectory closet.\""
+interact_value = "\"thank you for the key, father. i returned it to the rectory closet.\" - sister marion"
 
 [node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_xiylk")
@@ -37,3 +38,8 @@ metadata/_edit_lock_ = true
 
 [node name="spawn" type="Marker2D" parent="hallway"]
 position = Vector2(-57, -23)
+
+[node name="cross" parent="." instance=ExtResource("4_qgobi")]
+position = Vector2(-62, 37)
+rotation = -1.5708
+interact_type = "collectible"

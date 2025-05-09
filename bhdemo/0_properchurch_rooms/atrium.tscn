@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://biaf5k6yp5eiq"]
+[gd_scene load_steps=5 format=3 uid="uid://biaf5k6yp5eiq"]
 
 [ext_resource type="Texture2D" uid="uid://cjlleaste6u4d" path="res://bgsprites/properchurch/atrium.png" id="1_qtk4k"]
 [ext_resource type="PackedScene" uid="uid://bdfo2ch71qngw" path="res://door.tscn" id="2_unmgo"]
+[ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="3_7rwfy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rwfy"]
+size = Vector2(516, 223)
 
 [node name="atrium" type="StaticBody2D"]
 
@@ -59,6 +63,19 @@ metadata/_edit_lock_ = true
 
 [node name="spawn" parent="down_right" index="1"]
 position = Vector2(0, -95)
+
+[node name="resolve" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+script = ExtResource("3_7rwfy")
+interact_label = "...oh, well. once more into the fray."
+interact_type = "print_text"
+interact_value = ""
+
+[node name="coll" type="CollisionShape2D" parent="resolve"]
+position = Vector2(-2, 28.5)
+shape = SubResource("RectangleShape2D_7rwfy")
+metadata/_edit_lock_ = true
 
 [editable path="up_left"]
 [editable path="up_right"]

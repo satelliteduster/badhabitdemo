@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4e6wqipbhbpg"]
+[gd_scene load_steps=6 format=3 uid="uid://c4e6wqipbhbpg"]
 
 [ext_resource type="Texture2D" uid="uid://c8ehu8jrqh8tr" path="res://itemsprites/item_basementdoor.png" id="1_yeiqu"]
 [ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_a2qqo"]
+[ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="2_q8f88"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yeiqu"]
-size = Vector2(77, 157)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2qqo"]
+size = Vector2(76, 157)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8f88"]
 size = Vector2(77, 118)
@@ -14,9 +15,16 @@ size = Vector2(77, 118)
 [node name="basementdoor" type="Sprite2D" parent="."]
 texture = ExtResource("1_yeiqu")
 
-[node name="block" type="CollisionShape2D" parent="."]
+[node name="block" type="Area2D" parent="."]
 position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_yeiqu")
+script = ExtResource("2_q8f88")
+interact_label = "this is the door, but it's locked."
+interact_type = "print_text"
+interact_value = "i need a key to open it."
+
+[node name="coll" type="CollisionShape2D" parent="block"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_a2qqo")
 
 [node name="to_basement" type="Area2D" parent="."]
 script = ExtResource("2_a2qqo")

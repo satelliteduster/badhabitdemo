@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx3812hg3pnax"]
+[gd_scene load_steps=6 format=3 uid="uid://cx3812hg3pnax"]
 
 [ext_resource type="Texture2D" uid="uid://jmvwho35e3j5" path="res://bgsprites/convent_2ndfloor/4_prayer_room.png" id="1_m6a5l"]
 [ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_vvx3x"]
+[ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="3_8ugjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75rga"]
 size = Vector2(40, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk1mv"]
+size = Vector2(36, 54)
 
 [node name="prayer room" type="StaticBody2D"]
 
@@ -27,3 +31,13 @@ metadata/_edit_lock_ = true
 
 [node name="spawn" type="Marker2D" parent="hallway"]
 position = Vector2(-52, -28)
+
+[node name="hint" type="Area2D" parent="."]
+script = ExtResource("3_8ugjo")
+interact_label = "praying doesn't usually help me think, but..."
+interact_type = "print_text"
+interact_value = "\"whether you turn to the right or to the left, your ears will hear a voice behind you, saying, 'this is the way; walk in it.'\""
+
+[node name="coll" type="CollisionShape2D" parent="hint"]
+position = Vector2(-88, -6)
+shape = SubResource("RectangleShape2D_mk1mv")

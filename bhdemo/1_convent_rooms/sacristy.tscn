@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://w1bkvwqc53q0"]
+[gd_scene load_steps=6 format=3 uid="uid://w1bkvwqc53q0"]
 
 [ext_resource type="Texture2D" uid="uid://dv3hqhomp26us" path="res://bgsprites/convent_2ndfloor/7_sacristy[down].png" id="1_htmfo"]
 [ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_65bjn"]
+[ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="3_7am1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7am1a"]
 size = Vector2(40, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5srq"]
+size = Vector2(127, 45)
 
 [node name="sacristy" type="StaticBody2D"]
 
@@ -27,3 +31,14 @@ metadata/_edit_lock_ = true
 
 [node name="spawn" type="Marker2D" parent="to_sacristy"]
 position = Vector2(67, -28)
+
+[node name="confusion" type="Area2D" parent="."]
+position = Vector2(11, 67)
+script = ExtResource("3_7am1a")
+interact_label = "this place looks familiar..."
+interact_type = "print_text"
+interact_value = "this is the sacristy."
+
+[node name="coll" type="CollisionShape2D" parent="confusion"]
+shape = SubResource("RectangleShape2D_a5srq")
+metadata/_edit_lock_ = true

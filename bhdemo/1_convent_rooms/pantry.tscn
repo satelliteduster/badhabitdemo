@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvywle8vt8ric"]
+[gd_scene load_steps=6 format=3 uid="uid://dvywle8vt8ric"]
 
 [ext_resource type="Texture2D" uid="uid://bb346e72j43sl" path="res://bgsprites/convent_1stfloor/3_pantry.png" id="1_p3pww"]
 [ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_llsvk"]
+[ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="3_tn0bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3pww"]
 size = Vector2(36.75, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llsvk"]
+size = Vector2(159, 64)
 
 [node name="pantry" type="StaticBody2D"]
 
@@ -26,3 +30,13 @@ debug_color = Color(0.432011, 0.601005, 0, 0.42)
 
 [node name="spawn" type="Marker2D" parent="to_kitchen"]
 position = Vector2(-83, 3.0003)
+
+[node name="pantry" type="Area2D" parent="."]
+script = ExtResource("3_tn0bh")
+interact_label = "i'm not that hungry."
+interact_type = "print_text"
+interact_value = "marion loves to blame me when snacks go missing. it's not me, but it's fun to see her get pissed off."
+
+[node name="coll" type="CollisionShape2D" parent="pantry"]
+position = Vector2(0.5, 9)
+shape = SubResource("RectangleShape2D_llsvk")

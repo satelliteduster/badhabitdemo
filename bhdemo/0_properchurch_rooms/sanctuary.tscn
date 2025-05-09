@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dplgatms44v20"]
+[gd_scene load_steps=7 format=3 uid="uid://dplgatms44v20"]
 
 [ext_resource type="Texture2D" uid="uid://cch2xb5j676kt" path="res://bgsprites/properchurch/sanctuary.png" id="1_mpngq"]
 [ext_resource type="PackedScene" uid="uid://bdfo2ch71qngw" path="res://door.tscn" id="2_1n6mx"]
+[ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="3_3oduy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cp7ah"]
 size = Vector2(146, 119)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rydlq"]
 size = Vector2(51, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2i1si"]
+radius = 189.042
 
 [node name="sanctuary" type="StaticBody2D"]
 
@@ -55,6 +59,17 @@ metadata/_edit_lock_ = true
 
 [node name="spawn" parent="down" index="1"]
 position = Vector2(0, -95)
+
+[node name="worry" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+script = ExtResource("3_3oduy")
+interact_label = "...where is everybody?"
+interact_type = "print_text"
+interact_value = ""
+
+[node name="coll" type="CollisionShape2D" parent="worry"]
+shape = SubResource("CircleShape2D_2i1si")
 
 [editable path="up_left"]
 [editable path="up_right"]

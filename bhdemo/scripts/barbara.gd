@@ -8,7 +8,6 @@ class_name Player
 @onready var interactions = []
 @onready var interaction = $interaction
 @onready var interactlabel = $interaction/text
-
 @onready var interactresponse = $interaction/response
 
 var lastdir = "down"
@@ -84,11 +83,15 @@ func execute_interactions():
 	if interactions:
 		var current_int = interactions[0]
 		match current_int.interact_type:
+			"tutorial_text":
+				pass
 			"print_text" : 
 				interactresponse.show()
 				interactresponse.text = current_int.interact_value
 				print(current_int.interact_value)
 			"collectible" : 
+				interactresponse.show()
+				interactresponse.text = current_int.interact_value
+				print(current_int.interact_value)
 				#get_parent().current_int.hide()
 				#InventoryManager._add_to_inventory(current_int)
-				print(current_int.interact_value)

@@ -15,7 +15,7 @@ polygon = PackedVector2Array(-82, 140, 41, 140, 41, 59, 73, 58, 75, -79, 40.2233
 position = Vector2(-81, -89)
 interact_label = "the father's desk... but where's the key?"
 interact_type = "print_text"
-interact_value = "\"i lent the key to sister marion, up in the dormitory.\""
+interact_value = "\"thank you for the key, father. it'll be up in the dormitory if you need it.\" - sister marion"
 
 [node name="coll2" parent="itembox" index="0"]
 position = Vector2(0, 89.875)

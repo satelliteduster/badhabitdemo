@@ -12,9 +12,9 @@ texture = ExtResource("1_1g6it")
 polygon = PackedVector2Array(-42, 140, -1, 116, -1, 79, 16, 81, 63, 52, 64, 27, 95, 8, 107, -22, 106, -50, 85, -69, 59, -83, 20, -88, -9, -82, -36, -68, -44, -61, -61, -72, -60, -134, -106, -107, -107, -4, -66, 14, -87, 14, -87, 114)
 
 [node name="bible" parent="." instance=ExtResource("2_puao0")]
-interact_label = "... a bible?"
+interact_label = "huh... is this someone's diary?"
 interact_type = "print_text"
-interact_value = "and god said, \"go upstairs and pray, my child.\""
+interact_value = "\"i wish we had the money for soundproofing. someone's always stomping around after dark.\""
 
 [node name="coll2" parent="bible" index="0"]
 light_mask = 2

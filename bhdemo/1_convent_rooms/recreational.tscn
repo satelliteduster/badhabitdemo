@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbuel2t6dtu3h"]
+[gd_scene load_steps=6 format=3 uid="uid://cbuel2t6dtu3h"]
 
 [ext_resource type="Texture2D" uid="uid://mloxrmhvwkje" path="res://bgsprites/convent_3rdfloor/2_recreational.png" id="1_cut8j"]
 [ext_resource type="Script" uid="uid://318l8wnp2gks" path="res://scripts/door.gd" id="2_lp5r1"]
+[ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="3_y0ket"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0ket"]
 size = Vector2(40, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2epb"]
+size = Vector2(62, 51)
 
 [node name="recreational" type="StaticBody2D"]
 
@@ -12,7 +16,7 @@ size = Vector2(40, 58)
 texture = ExtResource("1_cut8j")
 
 [node name="walls" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-5, 26, -5, 9, 56, 9, 56, 39, 90, 39, 90, 90, 54, 90, 54, 157, -74, 157, -73, 28, -124, 28, -126, 199, 128, 198, 126, -207, -122, -207, -124, 24)
+polygon = PackedVector2Array(-5, 24, -5, 9, 56, 9, 56, 39, 90, 39, 90, 90, 54, 90, 54, 157, -74, 157, -73, 28, -124, 28, -126, 199, 128, 198, 126, -207, -122, -207, -124, 24)
 
 [node name="hallway" type="Area2D" parent="."]
 position = Vector2(91, 61)
@@ -27,3 +31,14 @@ metadata/_edit_lock_ = true
 
 [node name="spawn" type="Marker2D" parent="hallway"]
 position = Vector2(-57, -23)
+
+[node name="tv" type="Area2D" parent="."]
+position = Vector2(-37, 23)
+script = ExtResource("3_y0ket")
+interact_label = "eight channels and still nothing to watch."
+interact_type = "print_text"
+interact_value = "it won't turn on."
+
+[node name="coll" type="CollisionShape2D" parent="tv"]
+shape = SubResource("RectangleShape2D_q2epb")
+metadata/_edit_lock_ = true

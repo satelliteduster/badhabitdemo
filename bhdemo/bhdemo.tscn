@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpjjpfj45bd28"]
+[gd_scene load_steps=7 format=3 uid="uid://cpjjpfj45bd28"]
 
 [ext_resource type="Script" uid="uid://8hktq8q0lwgk" path="res://scripts/bhcontroller.gd" id="1_nccpt"]
 [ext_resource type="PackedScene" uid="uid://b6tktttggsejv" path="res://barbara.tscn" id="1_qasne"]
 [ext_resource type="PackedScene" uid="uid://danoho6thp1tg" path="res://0_properchurch_rooms/properchurch.tscn" id="2_8tvq4"]
 [ext_resource type="PackedScene" uid="uid://cnmeqqgl3a2oo" path="res://1_convent_rooms/convent.tscn" id="3_g4gj3"]
+[ext_resource type="Script" uid="uid://bry61hm7qtqti" path="res://scripts/item.gd" id="3_j2043"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5yjlv"]
+radius = 92.0217
 
 [node name="bhdemo" type="Node"]
 script = ExtResource("1_nccpt")
 
 [node name="barbara" parent="." instance=ExtResource("1_qasne")]
 z_index = 1
-position = Vector2(32.0001, -5172)
+position = Vector2(2998, 955)
 scale = Vector2(0.34, 0.34)
 
 [node name="AnimatedSprite2D" parent="barbara" index="0"]
@@ -48,6 +52,34 @@ metadata/_edit_lock_ = true
 
 [node name="inventory" parent="barbara" index="5"]
 position = Vector2(-1647.06, -902.941)
+
+[node name="tutorial + objective" type="Node2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+z_index = 1
+position = Vector2(603, 412)
+
+[node name="arrows" type="Area2D" parent="tutorial + objective"]
+position = Vector2(2393, 569)
+script = ExtResource("3_j2043")
+interact_label = "use the arrow keys to move."
+interact_type = "tutorial_text"
+interact_value = ""
+
+[node name="coll" type="CollisionShape2D" parent="tutorial + objective/arrows"]
+shape = SubResource("CircleShape2D_5yjlv")
+metadata/_edit_lock_ = true
+
+[node name="interact" type="Area2D" parent="tutorial + objective"]
+position = Vector2(2392, -1826)
+script = ExtResource("3_j2043")
+interact_label = "press the 'z' key to interact with items."
+interact_type = "tutorial_text"
+interact_value = ""
+
+[node name="coll" type="CollisionShape2D" parent="tutorial + objective/interact"]
+shape = SubResource("CircleShape2D_5yjlv")
+metadata/_edit_lock_ = true
 
 [node name="currentscene" type="Node2D" parent="."]
 metadata/_edit_group_ = true
